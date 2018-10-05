@@ -8,6 +8,10 @@ public class Stat : MonoBehaviour
     /*
      * Fields
      */
+    // The Stat's text indicator.
+    // It is updated automatically when CurrentValue is changed.
+    [SerializeField]
+    private Text statValue;
     // The Stat's bar graphic
     private Image content;
     // Speed at which bar graphic changes length
@@ -17,9 +21,12 @@ public class Stat : MonoBehaviour
     // The Maximum Value of this stat
     public float MaxValue { get; set; }
 
-    // The ratio of CurrentValue/MaxValue; updated automatically when CurrentValue is changed.
+    // The fill fraction of the Stat bar.
+    // It is the ratio of CurrentValue/MaxValue; updated automatically when CurrentValue is changed.
     private float currentFill;
-    // The Current value of this stat. Setter updates currentFill automatically.
+
+    // The Current value of this stat. 
+    // Setter updates currentFill and statValue automatically.
     private float currentValue;
     public float CurrentValue
     {
@@ -36,8 +43,12 @@ public class Stat : MonoBehaviour
             } else if (value < 0) {
                 currentValue = 0;
             }
+
             // Update the fill whenever value is changed
             currentFill = CurrentValue / MaxValue;
+
+            // Update the stat text.
+            statValue.text = currentValue + " / " + MaxValue;
         }
     }
 
