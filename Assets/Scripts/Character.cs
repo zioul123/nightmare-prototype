@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Character : MonoBehaviour {
-
+public abstract class Character : MonoBehaviour
+{
     /*
      * Static constants  
      */
@@ -16,11 +16,9 @@ public abstract class Character : MonoBehaviour {
      */
     // The Character's movement speed
     [SerializeField]
-    private float speed;
-
+    private float speed = 1f;
     // The Character's direction
     protected Vector2 direction;
-
     // The Character's animator
     private Animator animator;
 
@@ -66,19 +64,17 @@ public abstract class Character : MonoBehaviour {
     // Animate for idle state
     public void SetIdleAnimation() 
     {
-        animator.SetLayerWeight(1, 0);
+        animator.SetLayerWeight(WALK_ANIMATION_LAYER, 0);
     }
 
     // Animate for movement
     public void SetWalkAnimation(Vector2 direction) 
     {
-        // Set animator's walk layer to priority
-        animator.SetLayerWeight(1, 1);
+        // Set animator's walk layer to priority 1
+        animator.SetLayerWeight(WALK_ANIMATION_LAYER, 1);
 
         // Set animator parameters to trigger direction
         animator.SetFloat("x", direction.x);
         animator.SetFloat("y", direction.y);
     }
-
-
 }

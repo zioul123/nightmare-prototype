@@ -2,11 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Character {
+public class Player : Character 
+{
+    // Stat bars of the player
+    [SerializeField]
+    private Stat health;
+    [SerializeField]
+    private Stat mana;
 
-	// Use this for initialization
-	protected override void Start () 
+    // Stats of the player
+    [SerializeField]
+    private float maxHealth;
+    [SerializeField]
+    private float maxMana;
+
+    // Use this for initialization
+    protected override void Start () 
     {
+        // Start level with max stats always
+        health.Initialize(maxHealth, maxHealth); 
+        mana.Initialize(maxMana, maxMana);
         base.Start();
 	}
 	
@@ -23,6 +38,23 @@ public class Player : Character {
         // Reset direction first
         direction = Vector2.zero;
 
+        // FOR DEBUG
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            health.CurrentValue -= 10;
+        }
+        if (Input.GetKeyDown(KeyCode.F)) {
+            health.CurrentValue += 10;
+        }
+        if (Input.GetKeyDown(KeyCode.Z))
+        {
+            mana.CurrentValue -= 10;
+        }
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            mana.CurrentValue += 10;
+        }
+
+        // Handle Movement
         if (Input.GetKey(KeyCode.W)) {
             direction += Vector2.up;
         }
