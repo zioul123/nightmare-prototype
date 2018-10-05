@@ -4,6 +4,8 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
+    public enum AttackLayer { MeleeLayer, ShootLayer, CastLayer };
+
     /*
      * Fields
      */
@@ -13,9 +15,16 @@ public abstract class Character : MonoBehaviour
     // The Character's direction
     protected Vector2 direction;
     // The Character's animator
-    private Animator animator;
+    protected Animator animator;
     // The Character's rigidbody
     private Rigidbody2D rigidBody;
+
+    // The Attack layer to use
+    private string attackLayer;
+    // Whether the Character is attacking
+    protected bool isAttacking = false;
+    // Attack Coroutine
+    protected Coroutine attackRoutine;
 
     /*
      * Methods
@@ -33,45 +42,73 @@ public abstract class Character : MonoBehaviour
         AnimateCharacter();
     }
 
-    /*
-     * Movement
-     */
-
     // Handle Physics
-    private void FixedUpdate ()
+    private void FixedUpdate()
     {
         MoveCharacter();
     }
 
-    // Moves the Character
+    /*
+     * Mechanics
+     */
+    // Move the Character
     public void MoveCharacter ()
     {
         rigidBody.velocity = direction * speed;
     }
 
+    // Stop attacking
+    public void StopAttacking()
+    {
+        if (attackRoutine != null)
+        {
+            StopCoroutine(attackRoutine);
+            attackRoutine = null;
+            Debug.Log("Stopped attacking coroutine.");
+        }
+        if (isAttacking || animator.GetBool("attack")) {
+            isAttacking = false;
+            animator.SetBool("attack", isAttacking);
+            Debug.Log("Reset attacking booleans.");
+        }
+
+    }
+
     /*
      * Animation
      */
-
     // Animate the Character
-    private void AnimateCharacter()
+    private void AnimateCharacter ()
     {
-        if (IsMoving)
-        {
+        if (IsMoving) {
             SetWalkAnimation(direction);
-            return;
+            StopAttacking();
+        } else if (isAttacking) {
+            SetAttackAnimation();
+        } else {
+            SetIdleAnimation();
         }
-        SetIdleAnimation();
+    }
+
+    // Animate for attack.
+    // Precondition: SetAttackLayer should be called first.
+    public void SetAttackAnimation ()
+    {
+        if (attackLayer != null) {
+            ActivateLayer(attackLayer);
+        } else {
+            Debug.Log("Set attackLayer before setting attack animation.");
+        }
     }
 
     // Animate for idle state
-    public void SetIdleAnimation() 
+    public void SetIdleAnimation () 
     {
         ActivateLayer("IdleLayer");
     }
 
     // Animate for movement
-    public void SetWalkAnimation(Vector2 direction) 
+    public void SetWalkAnimation (Vector2 direction) 
     {
         ActivateLayer("WalkLayer");
 
@@ -83,20 +120,41 @@ public abstract class Character : MonoBehaviour
     /*
      * Utility
      */
-    // Return whether the Character is moving
-    public bool IsMoving {
-        get {
-            return direction != Vector2.zero;
-        }
-    }
-
     // Set the animation layer to be active
     public void ActivateLayer (string layerName)
     {
-
         for (int i = 0; i < animator.layerCount; i++) {
                 animator.SetLayerWeight(i, 0);
         }
         animator.SetLayerWeight(animator.GetLayerIndex(layerName), 1);
+    }
+
+    // Whether the Character is moving
+    public bool IsMoving
+    {
+        get
+        {
+            return direction != Vector2.zero;
+        }
+    }
+
+    // Set the attackLayer string based on the AttackLayer enum
+    public void SetAttackLayer(AttackLayer al)
+    {
+        switch (al)
+        {
+            case AttackLayer.MeleeLayer:
+                attackLayer = "MeleeLayer";
+                break;
+            case AttackLayer.ShootLayer:
+                attackLayer = "ShootLayer";
+                break;
+            case AttackLayer.CastLayer:
+                attackLayer = "CastLayer";
+                break;
+            default:
+                Debug.Log("Invalid AttackLayer");
+                break;
+        }
     }
 }

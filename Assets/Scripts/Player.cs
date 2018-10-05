@@ -22,6 +22,7 @@ public class Player : Character
         // Start level with max stats always
         health.Initialize(maxHealth, maxHealth); 
         mana.Initialize(maxMana, maxMana);
+
         base.Start();
 	}
 	
@@ -45,12 +46,10 @@ public class Player : Character
         if (Input.GetKeyDown(KeyCode.F)) {
             health.CurrentValue += 10;
         }
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
+        if (Input.GetKeyDown(KeyCode.Z)) {
             mana.CurrentValue -= 10;
         }
-        if (Input.GetKeyDown(KeyCode.C))
-        {
+        if (Input.GetKeyDown(KeyCode.C)) {
             mana.CurrentValue += 10;
         }
 
@@ -58,17 +57,38 @@ public class Player : Character
         if (Input.GetKey(KeyCode.W)) {
             direction += Vector2.up;
         }
-        if (Input.GetKey(KeyCode.A))
-        {
+        if (Input.GetKey(KeyCode.A)) {
             direction += Vector2.left;
         }
-        if (Input.GetKey(KeyCode.R))
-        {
+        if (Input.GetKey(KeyCode.R)) {
             direction += Vector2.down;
         }
-        if (Input.GetKey(KeyCode.S))
-        {
+        if (Input.GetKey(KeyCode.S)) {
             direction += Vector2.right;
+        }
+
+        // Handle Skills
+        // Basic shoot
+        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+            attackRoutine = StartCoroutine(Shoot());
+        }
+    }
+
+    // Cast a basic shot
+    private IEnumerator Shoot ()
+    {
+        if (!isAttacking && !IsMoving)
+        {
+            Debug.Log("Begin shoot");
+
+            SetAttackLayer(AttackLayer.ShootLayer);
+            isAttacking = true; // For animation
+            animator.SetBool("attack", isAttacking);
+
+            yield return new WaitForSeconds(3); // FOR DEBUG
+            Debug.Log("Done shoot");
+
+            StopAttacking();
         }
     }
 }
