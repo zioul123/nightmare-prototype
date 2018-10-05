@@ -5,13 +5,6 @@ using UnityEngine;
 public abstract class Character : MonoBehaviour
 {
     /*
-     * Static constants  
-     */
-    // For Animations
-    public const int IDLE_ANIMATION_LAYER = 0;
-    public const int WALK_ANIMATION_LAYER = 1;
-
-    /*
      * Fields
      */
     // The Character's movement speed
@@ -21,6 +14,8 @@ public abstract class Character : MonoBehaviour
     protected Vector2 direction;
     // The Character's animator
     private Animator animator;
+    // The Character's rigidbody
+    private Rigidbody2D rigidBody;
 
     /*
      * Methods
@@ -29,52 +24,79 @@ public abstract class Character : MonoBehaviour
     protected virtual void Start () 
     {
         animator = GetComponent<Animator>();
-	}
-	
-	// Update is called once per frame
-	protected virtual void Update () 
-    {
-        HandleMovement();
-	}
+        rigidBody = GetComponent<Rigidbody2D>();
+    }
 
-    // Moves the Character
-    public void HandleMovement ()
+    // Update is called once per frame
+    protected virtual void Update () 
     {
-        TranslateCharacter();
         AnimateCharacter();
     }
 
-    // Translate the Character
-    private void TranslateCharacter () 
+    /*
+     * Movement
+     */
+
+    // Handle Physics
+    private void FixedUpdate ()
     {
-        transform.Translate(direction.normalized * speed * Time.deltaTime);
+        MoveCharacter();
     }
+
+    // Moves the Character
+    public void MoveCharacter ()
+    {
+        rigidBody.velocity = direction * speed;
+    }
+
+    /*
+     * Animation
+     */
 
     // Animate the Character
     private void AnimateCharacter()
     {
-        if (direction == Vector2.zero)
+        if (IsMoving)
         {
-            SetIdleAnimation();
+            SetWalkAnimation(direction);
             return;
         }
-        SetWalkAnimation(direction);
+        SetIdleAnimation();
     }
 
     // Animate for idle state
     public void SetIdleAnimation() 
     {
-        animator.SetLayerWeight(WALK_ANIMATION_LAYER, 0);
+        ActivateLayer("IdleLayer");
     }
 
     // Animate for movement
     public void SetWalkAnimation(Vector2 direction) 
     {
-        // Set animator's walk layer to priority 1
-        animator.SetLayerWeight(WALK_ANIMATION_LAYER, 1);
+        ActivateLayer("WalkLayer");
 
         // Set animator parameters to trigger direction
         animator.SetFloat("x", direction.x);
         animator.SetFloat("y", direction.y);
+    }
+
+    /*
+     * Utility
+     */
+    // Return whether the Character is moving
+    public bool IsMoving {
+        get {
+            return direction != Vector2.zero;
+        }
+    }
+
+    // Set the animation layer to be active
+    public void ActivateLayer (string layerName)
+    {
+
+        for (int i = 0; i < animator.layerCount; i++) {
+                animator.SetLayerWeight(i, 0);
+        }
+        animator.SetLayerWeight(animator.GetLayerIndex(layerName), 1);
     }
 }
