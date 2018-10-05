@@ -5,19 +5,22 @@ using UnityEngine;
 public class Player : Character {
 
 	// Use this for initialization
-	protected override void Start () {
+	protected override void Start () 
+    {
         base.Start();
 	}
 	
 	// Update is called once per frame
-	protected override void Update () {
+	protected override void Update () 
+    {
         GetInput();
         base.Update();
 	}
 
     // Listens for player input
-    private void GetInput () {
-
+    private void GetInput () 
+    {
+        // Reset direction first
         direction = Vector2.zero;
 
         if (Input.GetKey(KeyCode.W)) {
