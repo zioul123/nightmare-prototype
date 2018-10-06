@@ -106,97 +106,88 @@ public class Player : Character
 
         // Handle Skills
         // Toggle Attack mode
-        if (Input.GetKeyDown(KeyCode.Tab)) {
+        if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.LeftShift)) {
             attackMode.ToggleAttackMode();
         }
-        // Basic shoot
+        // Cast Attack Spell
         if (Input.GetKeyDown(KeyCode.Space)) {
-            ActivateBlocks();
-            if (Target != null && !isAttacking && !IsMoving && inLineOfSight()) {
-                attackRoutine = StartCoroutine(Attack());
-            }
+            AttemptSpellCast();
+        }
+    }
+
+    // Check conditions whether spellcast is possible and attack.
+    public void AttemptSpellCast () 
+    {
+        ActivateBlocks();
+        if (Target != null && !isAttacking && !IsMoving && inLineOfSight())
+        {
+            attackRoutine = StartCoroutine(SpellCast());
         }
     }
 
     // Cast a basic shot
-    private IEnumerator Attack ()
+    private IEnumerator SpellCast ()
     {
+        AttackLayer attackLayer;
+        float castTime, trailingAnimationTime;
+        string attackName;
+
         switch (attackMode.selectedAttackMode) {
-            case AttackMode.CHASER: 
-                Debug.Log("Begin Chaser Shot");
-
-                SetAttackLayer(AttackLayer.ShootLayer);
-                isAttacking = true;  // Trigger attacking in script
-                animator.SetBool("attack", isAttacking); // Trigger attacking animation in animation controller
-
-                // Animation cast time
-                yield return new WaitForSeconds(0.25f);
-                CastSpell();
-                Debug.Log("Shot fired");
-
-                // Carry on trailing animation
-                yield return new WaitForSeconds(0.25f);
-                StopAttacking();
+            case AttackMode.CHASER:
+                attackLayer = AttackLayer.ShootLayer;
+                castTime = 0.25f;
+                trailingAnimationTime = 0.25f;
+                attackName = "Chaser";
                 break;
             case AttackMode.AGONISER:
-                Debug.Log("Begin Agoniser Shot");
-
-                SetAttackLayer(AttackLayer.ShootLayer);
-                isAttacking = true;  // Trigger attacking in script
-                animator.SetBool("attack", isAttacking); // Trigger attacking animation in animation controller
-
-                // Animation cast time
-                yield return new WaitForSeconds(0.25f);
-                CastSpell();
-                Debug.Log("Shot fired");
-
-                // Carry on trailing animation
-                yield return new WaitForSeconds(0.25f);
-                StopAttacking();
+                attackLayer = AttackLayer.ShootLayer;
+                castTime = 0.25f;
+                trailingAnimationTime = 0.25f;
+                attackName = "Agoniser";
                 break;
             case AttackMode.STALKER:
-                Debug.Log("Begin Stalker Cast");
-
-                SetAttackLayer(AttackLayer.CastLayer);
-                isAttacking = true;  // Trigger attacking in script
-                animator.SetBool("attack", isAttacking); // Trigger attacking animation in animation controller
-
-                // Animation cast time
-                yield return new WaitForSeconds(0.333f);
-                CastSpell();
-                Debug.Log("Shot fired");
-
-                // Carry on trailing animation
-                yield return new WaitForSeconds(0.08333f);
-                StopAttacking();
+                attackLayer = AttackLayer.CastLayer;
+                castTime = 0.333f;
+                trailingAnimationTime = 0.08333f;
+                attackName = "Stalker";
                 break;
             case AttackMode.CASCADER:
-                Debug.Log("Begin Cascader Cast");
-
-                SetAttackLayer(AttackLayer.CastLayer);
-                isAttacking = true;  // Trigger attacking in script
-                animator.SetBool("attack", isAttacking); // Trigger attacking animation in animation controller
-
-                // Animation cast time
-                yield return new WaitForSeconds(0.333f);
-                CastSpell();
-                Debug.Log("Shot fired");
-
-                // Carry on trailing animation
-                yield return new WaitForSeconds(0.08333f);
-                StopAttacking();
+                attackLayer = AttackLayer.CastLayer;
+                castTime = 0.333f;
+                trailingAnimationTime = 0.08333f;
+                attackName = "Cascader";
                 break;
             default:
-                Debug.Log("Illegal attack mode.");
+                Debug.Log("Illegal attack mode; defaulting to Chaser.");
+                attackLayer = AttackLayer.ShootLayer;
+                castTime = 0.25f;
+                trailingAnimationTime = 0.25f;
+                attackName = "Chaser";
                 break;
         }
 
+        Debug.Log("Begin " + attackName + "Shot");
 
+        // Trigger attacking
+        SetAttackLayer(attackLayer);
+        isAttacking = true;  // Trigger attacking in script
+        animator.SetBool("attack", isAttacking); // Trigger attacking animation in animation controller
+
+        // Animation cast time
+        yield return new WaitForSeconds(castTime);
+        InstantiateSpell();
+        Debug.Log(attackName + " Shot Fired");
+
+        // Carry on trailing animation
+        yield return new WaitForSeconds(trailingAnimationTime);
+
+        // End spell cast
+        StopAttacking();
 
     }
 
     // Cast a spell
-    public void CastSpell () 
+    public void InstantiateSpell () 
     {
         Instantiate(spellPrefabs[attackMode.selectedAttackMode], exitPoints[exitIndex].transform.position, Quaternion.identity); 
     }
@@ -218,6 +209,12 @@ public class Player : Character
             block.Deactivate();
         }
         blocks[exitIndex].Acctivate();
+    }
+
+    // Select the attackMode
+    public void SetAttackMode(int selectedMode) 
+    {
+        attackMode.SetAttackMode(selectedMode);
     }
 
     class AttackMode {
@@ -244,6 +241,17 @@ public class Player : Character
         public void ToggleAttackMode() 
         {
             selectedAttackMode = (selectedAttackMode + 1) % 4;
+            foreach (GameObject frame in attackModeFrames)
+            {
+                frame.SetActive(false);
+            }
+            attackModeFrames[selectedAttackMode].SetActive(true);
+        }
+
+        // Set attack mode to attackMode
+        public void SetAttackMode(int attackMode)
+        {
+            selectedAttackMode = attackMode;
             foreach (GameObject frame in attackModeFrames)
             {
                 frame.SetActive(false);

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class GameManager : MonoBehaviour 
 {
@@ -22,7 +23,7 @@ public class GameManager : MonoBehaviour
 
     private void ClickTarget() 
     {
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
+        if (Input.GetKeyDown(KeyCode.Mouse0) && !EventSystem.current.IsPointerOverGameObject()) {
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero, Mathf.Infinity, clickableLayerMask);
             // Select
             if (hit.collider != null && hit.collider.tag == "Enemy") {
