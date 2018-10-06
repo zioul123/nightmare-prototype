@@ -23,6 +23,16 @@ public class Player : Character
     [SerializeField]
     private GameObject[] exitPoints;
     private int exitIndex = 0; // Down
+    // Target of the spell
+    public Transform Target {
+        get; set;
+    }
+
+    // Line of sight blocker
+    [SerializeField]
+    private Block[] blocks;
+    // Layer mask of blocker
+    int blockLayerMask;
 
     // Use this for initialization
     protected override void Start () 
@@ -30,6 +40,12 @@ public class Player : Character
         // Start level with max stats always
         health.Initialize(maxHealth, maxHealth); 
         mana.Initialize(maxMana, maxMana);
+
+        // Get the block layer mask
+        blockLayerMask = LayerMask.GetMask("Block");
+
+        // FOR DEBUG
+        //Target = GameObject.Find("Target").transform;
 
         base.Start();
 	}
@@ -81,8 +97,9 @@ public class Player : Character
 
         // Handle Skills
         // Basic shoot
-        if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            if (!isAttacking && !IsMoving) {
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            ActivateBlocks();
+            if (Target != null && !isAttacking && !IsMoving && inLineOfSight()) {
                 attackRoutine = StartCoroutine(Attack());
             }
         }
@@ -109,4 +126,24 @@ public class Player : Character
     {
         Instantiate(spellPrefabs[0], exitPoints[exitIndex].transform.position, Quaternion.identity); 
     }
+
+    // Check if enemy is in line of sight
+    private bool inLineOfSight ()
+    {
+        Vector3 targetDirection = (Target.position - transform.position).normalized;
+        // 8 is blocks layermask
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDirection, Vector2.Distance(transform.position, Target.position), blockLayerMask);
+        return hit.collider == null;
+    }
+
+    // Activate only the correct set of sight blockers
+    private void ActivateBlocks ()
+    {
+        foreach (Block block in blocks)
+        {
+            block.Deactivate();
+        }
+        blocks[exitIndex].Acctivate();
+    }
+
 }
