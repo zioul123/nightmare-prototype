@@ -5,9 +5,6 @@ using UnityEngine.UI;
 
 public class Stat : MonoBehaviour 
 {
-    /*
-     * Fields
-     */
     // The Stat's text indicator.
     // It is updated automatically when CurrentValue is changed.
     [SerializeField]
@@ -52,9 +49,6 @@ public class Stat : MonoBehaviour
         }
     }
 
-    /*
-     * Methods
-     */
 	// Use this for initialization
 	void Start () 
     {

@@ -16,6 +16,14 @@ public class Player : Character
     [SerializeField]
     private float maxMana;
 
+    // Spells
+    [SerializeField]
+    private GameObject[] spellPrefabs;
+    // Spawn point of spell animations
+    [SerializeField]
+    private GameObject[] exitPoints;
+    private int exitIndex = 0; // Down
+
     // Use this for initialization
     protected override void Start () 
     {
@@ -53,42 +61,52 @@ public class Player : Character
             mana.CurrentValue += 10;
         }
 
-        // Handle Movement
+        // Handle Movement and Exit Points
         if (Input.GetKey(KeyCode.W)) {
             direction += Vector2.up;
+            exitIndex = 1;
         }
         if (Input.GetKey(KeyCode.A)) {
             direction += Vector2.left;
+            exitIndex = 3;
         }
         if (Input.GetKey(KeyCode.R)) {
             direction += Vector2.down;
+            exitIndex = 0;
         }
         if (Input.GetKey(KeyCode.S)) {
             direction += Vector2.right;
+            exitIndex = 2;
         }
 
         // Handle Skills
         // Basic shoot
         if (Input.GetKeyDown(KeyCode.Mouse0)) {
-            attackRoutine = StartCoroutine(Shoot());
+            if (!isAttacking && !IsMoving) {
+                attackRoutine = StartCoroutine(Attack());
+            }
         }
     }
 
     // Cast a basic shot
-    private IEnumerator Shoot ()
+    private IEnumerator Attack ()
     {
-        if (!isAttacking && !IsMoving)
-        {
-            Debug.Log("Begin shoot");
+        Debug.Log("Begin shoot");
 
-            SetAttackLayer(AttackLayer.ShootLayer);
-            isAttacking = true; // For animation
-            animator.SetBool("attack", isAttacking);
+        SetAttackLayer(AttackLayer.ShootLayer);
+        isAttacking = true;  // Trigger attacking in script
+        animator.SetBool("attack", isAttacking); // Trigger attacking animation in animation controller
 
-            yield return new WaitForSeconds(3); // FOR DEBUG
-            Debug.Log("Done shoot");
+        yield return new WaitForSeconds(0.25f); // FOR DEBUG
+        CastSpell();
+        Debug.Log("Shot fired");
+        yield return new WaitForSeconds(0.25f); // FOR DEBUG
+        StopAttacking();
+    }
 
-            StopAttacking();
-        }
+    // Cast a spell
+    public void CastSpell () 
+    {
+        Instantiate(spellPrefabs[0], exitPoints[exitIndex].transform.position, Quaternion.identity); 
     }
 }

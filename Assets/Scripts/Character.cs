@@ -6,9 +6,6 @@ public abstract class Character : MonoBehaviour
 {
     public enum AttackLayer { MeleeLayer, ShootLayer, CastLayer };
 
-    /*
-     * Fields
-     */
     // The Character's movement speed
     [SerializeField]
     private float speed = 1f;
@@ -60,18 +57,15 @@ public abstract class Character : MonoBehaviour
     // Stop attacking
     public void StopAttacking()
     {
+        isAttacking = false; // Stop attacking in script
+        animator.SetBool("attack", isAttacking); // Stop attacking in animation controller
+
         if (attackRoutine != null)
         {
             StopCoroutine(attackRoutine);
             attackRoutine = null;
             Debug.Log("Stopped attacking coroutine.");
         }
-        if (isAttacking || animator.GetBool("attack")) {
-            isAttacking = false;
-            animator.SetBool("attack", isAttacking);
-            Debug.Log("Reset attacking booleans.");
-        }
-
     }
 
     /*
