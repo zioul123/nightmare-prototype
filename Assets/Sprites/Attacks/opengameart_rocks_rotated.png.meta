@@ -1,0 +1,1454 @@
+fileFormatVersion: 2
+guid: 53ffe459a88e7408eb3e4a23f60c195d
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: opengameart_rocks_rotated_0
+    21300002: opengameart_rocks_rotated_1
+    21300004: opengameart_rocks_rotated_2
+    21300006: opengameart_rocks_rotated_3
+    21300008: opengameart_rocks_rotated_4
+    21300010: opengameart_rocks_rotated_5
+    21300012: opengameart_rocks_rotated_6
+    21300014: opengameart_rocks_rotated_7
+    21300016: opengameart_rocks_rotated_8
+    21300018: opengameart_rocks_rotated_9
+    21300020: opengameart_rocks_rotated_10
+    21300022: opengameart_rocks_rotated_11
+    21300024: opengameart_rocks_rotated_12
+    21300026: opengameart_rocks_rotated_13
+    21300028: opengameart_rocks_rotated_14
+    21300030: opengameart_rocks_rotated_15
+    21300032: opengameart_rocks_rotated_16
+    21300034: opengameart_rocks_rotated_17
+    21300036: opengameart_rocks_rotated_18
+    21300038: opengameart_rocks_rotated_19
+    21300040: opengameart_rocks_rotated_20
+    21300042: opengameart_rocks_rotated_21
+    21300044: opengameart_rocks_rotated_22
+    21300046: opengameart_rocks_rotated_23
+    21300048: opengameart_rocks_rotated_24
+    21300050: opengameart_rocks_rotated_25
+    21300052: opengameart_rocks_rotated_26
+    21300054: opengameart_rocks_rotated_27
+    21300056: opengameart_rocks_rotated_28
+    21300058: opengameart_rocks_rotated_29
+    21300060: opengameart_rocks_rotated_30
+    21300062: opengameart_rocks_rotated_31
+    21300064: opengameart_rocks_rotated_32
+    21300066: opengameart_rocks_rotated_33
+    21300068: opengameart_rocks_rotated_34
+    21300070: opengameart_rocks_rotated_35
+    21300072: opengameart_rocks_rotated_36
+    21300074: opengameart_rocks_rotated_37
+    21300076: opengameart_rocks_rotated_38
+    21300078: opengameart_rocks_rotated_39
+    21300080: opengameart_rocks_rotated_40
+    21300082: opengameart_rocks_rotated_41
+    21300084: opengameart_rocks_rotated_42
+    21300086: opengameart_rocks_rotated_43
+    21300088: opengameart_rocks_rotated_44
+    21300090: opengameart_rocks_rotated_45
+    21300092: opengameart_rocks_rotated_46
+    21300094: opengameart_rocks_rotated_47
+    21300096: opengameart_rocks_rotated_48
+    21300098: opengameart_rocks_rotated_49
+    21300100: opengameart_rocks_rotated_50
+    21300102: opengameart_rocks_rotated_51
+    21300104: opengameart_rocks_rotated_52
+    21300106: opengameart_rocks_rotated_53
+    21300108: opengameart_rocks_rotated_54
+    21300110: opengameart_rocks_rotated_55
+    21300112: opengameart_rocks_rotated_56
+    21300114: opengameart_rocks_rotated_57
+    21300116: opengameart_rocks_rotated_58
+    21300118: opengameart_rocks_rotated_59
+    21300120: opengameart_rocks_rotated_60
+    21300122: opengameart_rocks_rotated_61
+    21300124: opengameart_rocks_rotated_62
+    21300126: opengameart_rocks_rotated_63
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_0
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 1840
+        width: 164
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576b425deffb5464a8af33b880d96ef3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_1
+      rect:
+        serializedVersion: 2
+        x: 292
+        y: 1839
+        width: 170
+        height: 165
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e569fbd289afd44dc9cb42075565419f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_2
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 1834
+        width: 172
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cef77f8343fb452fa24a1a2ea33d53e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_3
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 1831
+        width: 176
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 62b49f5b41fab4dc996c82e501795522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_4
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 1831
+        width: 175
+        height: 187
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f806e196a6349446c836e274909c2ba1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_5
+      rect:
+        serializedVersion: 2
+        x: 1319
+        y: 1828
+        width: 173
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cf14cb55557447c1a11d7bc9fb22484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_6
+      rect:
+        serializedVersion: 2
+        x: 1576
+        y: 1831
+        width: 173
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5253c996f89f64550a98cb67d0f6543c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_7
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 1828
+        width: 168
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2cb116bf964264f1398f1fed23ac0b51
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_8
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 1568
+        width: 164
+        height: 184
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 250fe614473bf4b3c96a2406f2bbf8da
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_9
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 1568
+        width: 164
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240805f83f2064a619df70a605b4c2af
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_10
+      rect:
+        serializedVersion: 2
+        x: 559
+        y: 1568
+        width: 165
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95754173845cd4f43ac4cfe01a81993d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_11
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 1572
+        width: 165
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c6ed4b3ebb0e488aa7f9754e71ead5c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_12
+      rect:
+        serializedVersion: 2
+        x: 1070
+        y: 1579
+        width: 162
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42ad15cf9041047fc8fc3dcbf10bcc58
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_13
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 1588
+        width: 160
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4254e8047bc4e448b53885507e7570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_14
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 1592
+        width: 157
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8eb62034cf23445797a42a0db16d42a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_15
+      rect:
+        serializedVersion: 2
+        x: 1836
+        y: 1591
+        width: 160
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a28586de0c64a64af8e157962105c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_16
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 1328
+        width: 166
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98658d5e809eb408986960f9b67565de
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_17
+      rect:
+        serializedVersion: 2
+        x: 295
+        y: 1328
+        width: 171
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d924a4b371ff94850a377f2331d153c1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_18
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 1327
+        width: 175
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f0646ccaf8b447988341c7dc6f49e05
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_19
+      rect:
+        serializedVersion: 2
+        x: 804
+        y: 1324
+        width: 177
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc4149c0a60f44dadae166d0abce9f32
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_20
+      rect:
+        serializedVersion: 2
+        x: 1063
+        y: 1324
+        width: 177
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dfb545dd3b1947cf8bbe40dd9c4ded0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_21
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 1324
+        width: 173
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bc7e85d04ea54f258598f200d939198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_22
+      rect:
+        serializedVersion: 2
+        x: 1583
+        y: 1324
+        width: 165
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdbbc4c5645ec47c7a7127d413e6fb3d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_23
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 1324
+        width: 162
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae779ed3968894fb1a063304bed05b0b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_24
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 1072
+        width: 160
+        height: 157
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d44313f09e694d6e8466eabd01cb4d2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_25
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 1071
+        width: 166
+        height: 161
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99565b044f8b54a1c8e7a54d404198b0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_26
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 1071
+        width: 172
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31ac0862bf1df48839ca994a13d5e3df
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_27
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 1072
+        width: 171
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b729e319e62d481e8bfaed61dd5ec30
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_28
+      rect:
+        serializedVersion: 2
+        x: 1064
+        y: 1076
+        width: 172
+        height: 158
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c8e2610a38434c639dbca303fdc42fe
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_29
+      rect:
+        serializedVersion: 2
+        x: 1322
+        y: 1078
+        width: 166
+        height: 154
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61175db234ccd47b4acc63bab972f861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_30
+      rect:
+        serializedVersion: 2
+        x: 1579
+        y: 1076
+        width: 161
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4981b903fd19b409ea0a5807cb7e55de
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_31
+      rect:
+        serializedVersion: 2
+        x: 1832
+        y: 1072
+        width: 164
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7f80c713cc254218bd0cba839b1cdf0
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_32
+      rect:
+        serializedVersion: 2
+        x: 48
+        y: 812
+        width: 148
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5efb92f0c1e24c6aaa0b41241e12535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_33
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 812
+        width: 152
+        height: 168
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 622c401bd26434f0eb0f1f0478de378e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_34
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 812
+        width: 156
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae90af03dced740a8b6b924def043b10
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_35
+      rect:
+        serializedVersion: 2
+        x: 818
+        y: 808
+        width: 155
+        height: 182
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e662d1a1d109467aa5931d585a4b3b7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_36
+      rect:
+        serializedVersion: 2
+        x: 1072
+        y: 804
+        width: 160
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 286d2f727d4cd4198a34cd5436dfc9bd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_37
+      rect:
+        serializedVersion: 2
+        x: 1328
+        y: 803
+        width: 161
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd359561e2ce4ee3b7777c88fed487f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_38
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 804
+        width: 161
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e8442eeb9e834c53b9e30689e615495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_39
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 807
+        width: 164
+        height: 193
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c3f03b9fc47a47038b0727be45e817c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_40
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 556
+        width: 162
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81053e8f01fe44517b13a3e5dd74da06
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_41
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 552
+        width: 158
+        height: 188
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7085d97bef6454631aec226793a6d137
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_42
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 550
+        width: 156
+        height: 186
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d09053336065407798c37d6af335cb8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_43
+      rect:
+        serializedVersion: 2
+        x: 823
+        y: 550
+        width: 154
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5d040aaf07684cc5ab39c1edf8ea232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_44
+      rect:
+        serializedVersion: 2
+        x: 1078
+        y: 548
+        width: 151
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 207ea9e57e52945c0a55f3dc6fa02bbf
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_45
+      rect:
+        serializedVersion: 2
+        x: 1334
+        y: 548
+        width: 146
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 661a679cef10d4e7fbd98c829b82ceff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_46
+      rect:
+        serializedVersion: 2
+        x: 1588
+        y: 552
+        width: 152
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 881ab23fa84c1448f80a5ffad54ea2c7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_47
+      rect:
+        serializedVersion: 2
+        x: 1844
+        y: 554
+        width: 156
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a680c760fd494da6afbd2281d666a4e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_48
+      rect:
+        serializedVersion: 2
+        x: 52
+        y: 298
+        width: 160
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25bd56d12d043454fba571d4aa4d8c8b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_49
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 300
+        width: 165
+        height: 160
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cec8b093aa6641d6b2c865e251af74b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_50
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 301
+        width: 172
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70dbd190a0aa446aca52c8302642f73b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_51
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 300
+        width: 180
+        height: 173
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a7056520e6374cd6bbe052b9cfc9072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_52
+      rect:
+        serializedVersion: 2
+        x: 1066
+        y: 306
+        width: 182
+        height: 171
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9748702d48314138838ff0428cb7336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_53
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 308
+        width: 184
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 192c08fed715541319993f4dcceb0569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_54
+      rect:
+        serializedVersion: 2
+        x: 1575
+        y: 311
+        width: 181
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39a4a4589ee4d4d709ef8da370350443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_55
+      rect:
+        serializedVersion: 2
+        x: 1831
+        y: 304
+        width: 178
+        height: 176
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf5329c63f5024baa9bd2762d91f769e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_56
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 44
+        width: 174
+        height: 177
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23710a6c5334347788ce8bae4e2ecf54
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_57
+      rect:
+        serializedVersion: 2
+        x: 296
+        y: 44
+        width: 172
+        height: 174
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b62e837caf38499e8f8e57818a2b663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_58
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 47
+        width: 164
+        height: 169
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 76770781f7a2e48e7b891cb22770d2f8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_59
+      rect:
+        serializedVersion: 2
+        x: 812
+        y: 48
+        width: 162
+        height: 164
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5acc9e71866124e9f94179c373f72d55
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_60
+      rect:
+        serializedVersion: 2
+        x: 1067
+        y: 52
+        width: 161
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1e76649cda1fc4b4cba9f11ed4a13ebd
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_61
+      rect:
+        serializedVersion: 2
+        x: 1324
+        y: 52
+        width: 160
+        height: 156
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c9da2d5a5a7a4623be39e1263ed9cc5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_62
+      rect:
+        serializedVersion: 2
+        x: 1582
+        y: 48
+        width: 152
+        height: 162
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af5b0d668478462ca9d0759d495b68d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_rocks_rotated_63
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 44
+        width: 149
+        height: 166
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6c078e3b2e1a4d6eae98790727dd817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 07b266b9bd60440d884730dce963024a
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

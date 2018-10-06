@@ -1,0 +1,950 @@
+fileFormatVersion: 2
+guid: f25a78dcf22e540ac969c5cf4cf10d29
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: opengameart_ring_fire_smoke_0
+    21300002: opengameart_ring_fire_smoke_1
+    21300004: opengameart_ring_fire_smoke_2
+    21300006: opengameart_ring_fire_smoke_3
+    21300008: opengameart_ring_fire_smoke_4
+    21300010: opengameart_ring_fire_smoke_5
+    21300012: opengameart_ring_fire_smoke_6
+    21300014: opengameart_ring_fire_smoke_7
+    21300016: opengameart_ring_fire_smoke_8
+    21300018: opengameart_ring_fire_smoke_9
+    21300020: opengameart_ring_fire_smoke_10
+    21300022: opengameart_ring_fire_smoke_11
+    21300024: opengameart_ring_fire_smoke_12
+    21300026: opengameart_ring_fire_smoke_13
+    21300028: opengameart_ring_fire_smoke_14
+    21300030: opengameart_ring_fire_smoke_15
+    21300032: opengameart_ring_fire_smoke_16
+    21300034: opengameart_ring_fire_smoke_17
+    21300036: opengameart_ring_fire_smoke_18
+    21300038: opengameart_ring_fire_smoke_19
+    21300040: opengameart_ring_fire_smoke_20
+    21300042: opengameart_ring_fire_smoke_21
+    21300044: opengameart_ring_fire_smoke_22
+    21300046: opengameart_ring_fire_smoke_23
+    21300048: opengameart_ring_fire_smoke_24
+    21300050: opengameart_ring_fire_smoke_25
+    21300052: opengameart_ring_fire_smoke_26
+    21300054: opengameart_ring_fire_smoke_27
+    21300056: opengameart_ring_fire_smoke_28
+    21300058: opengameart_ring_fire_smoke_29
+    21300060: opengameart_ring_fire_smoke_30
+    21300062: opengameart_ring_fire_smoke_31
+    21300064: opengameart_ring_fire_smoke_32
+    21300066: opengameart_ring_fire_smoke_33
+    21300068: opengameart_ring_fire_smoke_34
+    21300070: opengameart_ring_fire_smoke_35
+    21300072: opengameart_ring_fire_smoke_36
+    21300074: opengameart_ring_fire_smoke_37
+    21300076: opengameart_ring_fire_smoke_38
+    21300078: opengameart_ring_fire_smoke_39
+  externalObjects: {}
+  serializedVersion: 7
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_0
+      rect:
+        serializedVersion: 2
+        x: 551
+        y: 539
+        width: 51
+        height: 36
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3748c35f06948679ff98ad6216632d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_1
+      rect:
+        serializedVersion: 2
+        x: 674
+        y: 535
+        width: 62
+        height: 41
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca182f8120595493db98d5255ef0008e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 533
+        width: 67
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e17955369ee4a329454372f36d9382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_3
+      rect:
+        serializedVersion: 2
+        x: 924
+        y: 532
+        width: 75
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0420c4819141f46c69690aac26a6beab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_4
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 404
+        width: 80
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d926e66489a345d3800abb3303eb218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_5
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 403
+        width: 83
+        height: 60
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0150454f737a47df893e50cc9f7edc3
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_6
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 401
+        width: 85
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b8e7a3acf3984f90aba07425164bc8e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_7
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 400
+        width: 87
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97f9b205a3b774ca38b7da735e81b505
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_8
+      rect:
+        serializedVersion: 2
+        x: 532
+        y: 401
+        width: 90
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8be74037b40f14019984275cbac3f6a9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_9
+      rect:
+        serializedVersion: 2
+        x: 660
+        y: 400
+        width: 91
+        height: 69
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68f5a97f8a7dd440ba42b7e9a96fb1ce
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_10
+      rect:
+        serializedVersion: 2
+        x: 786
+        y: 400
+        width: 94
+        height: 71
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a59c4f67ac7df47c48a589f56d5467c6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_11
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 400
+        width: 95
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 007a3a5c8def44b1084d82ef665c0e14
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_12
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 274
+        width: 95
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bff9637ec531845cf9e592867cb674e8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_13
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 274
+        width: 97
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 035bec48f5f5847878877e6c8c92146f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_14
+      rect:
+        serializedVersion: 2
+        x: 272
+        y: 274
+        width: 100
+        height: 78
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e786df495a263489d9a4b71eecd8b2f7
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_15
+      rect:
+        serializedVersion: 2
+        x: 398
+        y: 273
+        width: 106
+        height: 83
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d72d26ac9dac84ceb8a78756382dde09
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_16
+      rect:
+        serializedVersion: 2
+        x: 524
+        y: 274
+        width: 106
+        height: 87
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 733f66ee14808468195f5e2c867b1c3a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_17
+      rect:
+        serializedVersion: 2
+        x: 657
+        y: 278
+        width: 102
+        height: 79
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 43e143387024b48728f67434ea6258ab
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_18
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 278
+        width: 89
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf138c757d6d1421ebac81fed69cbd06
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_19
+      rect:
+        serializedVersion: 2
+        x: 846
+        y: 322
+        width: 38
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e30cedd2abd0a492e8d5ac511a12be47
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_20
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 278
+        width: 85
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ff2b337f36e4a2591839d3666e5391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_21
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 149
+        width: 90
+        height: 57
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47b2944f005d048b993c1e3b0e1fd1fb
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_22
+      rect:
+        serializedVersion: 2
+        x: 147
+        y: 149
+        width: 91
+        height: 62
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dca4b8ef1da74e6e9cbab39dd834871
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_23
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 149
+        width: 98
+        height: 66
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec711a9d9d9c48ffba3d982532d2554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_24
+      rect:
+        serializedVersion: 2
+        x: 402
+        y: 194
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b60e5c051188471ba58f5f8c02c15a6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_25
+      rect:
+        serializedVersion: 2
+        x: 406
+        y: 151
+        width: 88
+        height: 65
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eaca57a48fc74c0e85a73d01c1e5433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_26
+      rect:
+        serializedVersion: 2
+        x: 535
+        y: 152
+        width: 84
+        height: 53
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8426e6f9fa02447e0922d17fd65dc15c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_27
+      rect:
+        serializedVersion: 2
+        x: 663
+        y: 151
+        width: 86
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c92d8769f4de247caa6704b16616c87b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_28
+      rect:
+        serializedVersion: 2
+        x: 791
+        y: 152
+        width: 86
+        height: 54
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd040e7002c844f57a2ea9331929158f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_29
+      rect:
+        serializedVersion: 2
+        x: 920
+        y: 153
+        width: 84
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa2de360bc96c4257ab1e115744ae5d9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_30
+      rect:
+        serializedVersion: 2
+        x: 155
+        y: 29
+        width: 77
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98772c6e84a745228d9c0ea74314cee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_31
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 31
+        width: 71
+        height: 46
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe1d505c904c4ef093df0d32e8e2b48
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_32
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 66
+        width: 34
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a881320ac1b7a48439ec9dfcc0eeb263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_33
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 49
+        width: 13
+        height: 20
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f05f0a2eb2c44aa9adee1ec9288f1f1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_34
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 59
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7426c9a1685845deba904be4eb34f35
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_35
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 43
+        width: 9
+        height: 11
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a66785b47f404c19bd2a1cfd17cea96
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_36
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 41
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b56b060527ce849cf8fe2f7e5d42f96d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_37
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 37
+        width: 12
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cae3f4e900c34e8f8785fa07e0130e8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_38
+      rect:
+        serializedVersion: 2
+        x: 455
+        y: 39
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 69cbd4e70c70c4d1b9ec6014acbdcf6d
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: opengameart_ring_fire_smoke_39
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 41
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58e8d0c866d174c8482e461ef485f5e2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: cc31d3aafaa1b45c0b43c9518c06fa19
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
