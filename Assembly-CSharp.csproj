@@ -65,9 +65,11 @@
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\Classes\Block.cs" />
     <Compile Include="Assets\Scripts\Classes\Spell.cs" />
+    <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\GlobalSpellScript.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
+    <Compile Include="Assets\Scripts\Npc.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PointCastSpellScript.cs" />
     <Compile Include="Assets\Scripts\ProjectileSpellScript.cs" />

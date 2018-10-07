@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(Animator))]
 public abstract class Character : MonoBehaviour
 {
     public enum AttackLayer { MeleeLayer, ShootLayer, CastLayer };
@@ -15,6 +17,9 @@ public abstract class Character : MonoBehaviour
     protected Animator animator;
     // The Character's rigidbody
     private Rigidbody2D rigidBody;
+    // The Character's hitbox
+    [SerializeField]
+    protected Transform hitBox;
 
     // The Attack layer to use
     private string attackLayer;
