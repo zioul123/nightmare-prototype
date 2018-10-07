@@ -55,7 +55,7 @@ public abstract class Character : MonoBehaviour
     }
 
     // Stop attacking
-    public void StopAttacking()
+    public virtual void StopAttacking()
     {
         isAttacking = false; // Stop attacking in script
         animator.SetBool("attack", isAttacking); // Stop attacking in animation controller

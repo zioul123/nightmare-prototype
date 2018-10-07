@@ -9,8 +9,8 @@ public class ProjectileSpellScript : SpellScript
     [SerializeField]
     private float initialRotation;
 
-	// Use this for initialization
-	protected override void Start () {
+    // Use this for initialization
+    protected override void Start () {
         base.Start();
         // Fix direction and rotation
         FixedUpdate();
@@ -22,10 +22,24 @@ public class ProjectileSpellScript : SpellScript
         if (Target != null) {
             // Handle movement
             Vector2 direction = Target.transform.position - transform.position;
-            rigidBody.velocity = direction.normalized * speed;
+            rigidBody.velocity = direction.normalized * Speed;
             // Handle rotation
-            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - initialRotation;
+            float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - InitialRotation;
             rigidBody.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        }
+    }
+
+
+    public float InitialRotation
+    {
+        get
+        {
+            return initialRotation;
+        }
+
+        set
+        {
+            initialRotation = value;
         }
     }
 }

@@ -9,7 +9,8 @@ public abstract class SpellScript : MonoBehaviour {
     public Transform Target { get; set; }
     // The speed this spell moves
     [SerializeField]
-    protected float speed = 1;
+    private float speed = 1;
+
 
     // Use this for initialization
     protected virtual void Start () {
@@ -27,6 +28,19 @@ public abstract class SpellScript : MonoBehaviour {
             rigidBody.velocity = Vector2.zero;
             // Stop triggering motion
             Target = null;
+        }
+    }
+
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+
+        set
+        {
+            speed = value;
         }
     }
 }

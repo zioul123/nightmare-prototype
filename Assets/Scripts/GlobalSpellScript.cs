@@ -14,7 +14,7 @@ public class GlobalSpellScript : SpellScript
     {
         base.Start();
         // Initial position
-        transform.position = Target.position + new Vector3(0, initialY, 0);
+        transform.position = Target.position + new Vector3(0, InitialY, 0);
         // Fix direction and rotation
         FixedUpdate();
     }
@@ -25,7 +25,21 @@ public class GlobalSpellScript : SpellScript
         if (Target != null) {
             // Move to the location of the target
             Vector2 direction = Target.transform.position - transform.position;
-            rigidBody.velocity = direction.normalized * speed;
+            rigidBody.velocity = direction.normalized * Speed;
+        }
+    }
+
+
+    public float InitialY
+    {
+        get
+        {
+            return initialY;
+        }
+
+        set
+        {
+            initialY = value;
         }
     }
 }

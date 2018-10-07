@@ -115,21 +115,57 @@ public class Player : Character
         }
         // Cast Attack Spell
         if (Input.GetKeyDown(KeyCode.Space)) {
-            AttemptSpellCast();
+            AttemptSpellCast(false);
+        }
+    }
+
+    // Rotate the player toward the target she is casting at
+    public void RotatePlayerTowardTarget ()
+    {
+        if (Target == null) {
+            return;
+        }
+
+        Vector3 direction = Target.transform.position - transform.position;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+
+        // Right
+        if (-45 < angle && angle <= 45) {
+            animator.SetFloat("x", 1);
+            animator.SetFloat("y", 0);
+            exitIndex = 2;
+        // Down
+        } else if (-135 < angle && angle <= -45) {
+            animator.SetFloat("x", 0);
+            animator.SetFloat("y", -1);
+            exitIndex = 0;
+        // Left
+        } else if (angle <= -135 || 135 < angle) {
+            animator.SetFloat("x", -1);
+            animator.SetFloat("y", 0);
+            exitIndex = 3;
+        // Up
+        } else if (45 < angle && angle <= 135) {
+            animator.SetFloat("x", 0);
+            animator.SetFloat("y", 1);
+            exitIndex = 1;
         }
     }
 
     // Check conditions whether spellcast is possible and attack.
-    public void AttemptSpellCast () 
+    public void AttemptSpellCast (bool isDirectional) 
     {
-        ActivateBlocks();
-        if (Target != null && !isAttacking && !IsMoving && (!requiresLineOfSight() || inLineOfSight()))
+        if (isDirectional) {
+            ActivateBlocks();
+        }
+        if (Target != null && !isAttacking && !IsMoving && (!RequiresLineOfSight() || InLineOfSight()))
         {
+            RotatePlayerTowardTarget();
             attackRoutine = StartCoroutine(SpellCast());
         }
     }
 
-    // Cast a basic shot
+    // Cast a basic shot. Precondition: All conditions to cast a spell were already met.
     private IEnumerator SpellCast ()
     {
         currentSpell = spellBook.GetSpell(attackMode.selectedAttackMode);
@@ -158,11 +194,25 @@ public class Player : Character
     public void InstantiateSpell () 
     {
         SpellScript spellScript = Instantiate(currentSpell.SpellPrefab, exitPoints[exitIndex].transform.position, Quaternion.identity).GetComponent<SpellScript>();
+        spellScript.Speed = currentSpell.Speed;
+        if (currentSpell.MySpellType == Spell.SpellType.Projectile) {
+            ((ProjectileSpellScript)spellScript).InitialRotation = currentSpell.InitialRotation;
+        }
+        if (currentSpell.MySpellType == Spell.SpellType.Global) {
+            ((GlobalSpellScript)spellScript).InitialY = currentSpell.InitialY;
+        }
         spellScript.Target = Target;
     }
 
+    // Stop attacking
+    public override void StopAttacking()
+    {
+        spellBook.StopCasting();
+        base.StopAttacking();
+    }
+
     // Check if enemy is in line of sight
-    private bool inLineOfSight ()
+    private bool InLineOfSight ()
     {
         Vector3 targetDirection = (Target.position - transform.position).normalized;
         // 8 is blocks layermask
@@ -171,7 +221,7 @@ public class Player : Character
     }
 
     // Check if spell requires line of sight
-    private bool requiresLineOfSight () 
+    private bool RequiresLineOfSight () 
     {
         // Currently, everything needs LOS except Stalker
         return attackMode.selectedAttackMode != AttackMode.STALKER;

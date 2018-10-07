@@ -71,9 +71,9 @@
     <Compile Include="Assets\Scripts\Player.cs" />
     <Compile Include="Assets\Scripts\PointCastSpellScript.cs" />
     <Compile Include="Assets\Scripts\ProjectileSpellScript.cs" />
+    <Compile Include="Assets\Scripts\SpellBook.cs" />
     <Compile Include="Assets\Scripts\SpellScript.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
-    <Compile Include="Assets\SpellBook.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/louiz/OneDrive/Content Creation/Learning to code/Metal/Nightmare Prototype/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

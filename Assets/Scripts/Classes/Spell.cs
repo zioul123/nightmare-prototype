@@ -35,6 +35,8 @@ public class Spell
     private Sprite icon;
     [SerializeField]
     private GameObject spellPrefab;
+    [SerializeField]
+    private Color spellColor;
 
     public GameObject SpellPrefab
     {
@@ -83,7 +85,7 @@ public class Spell
         }
     }
 
-    public SpellType SpellType1
+    public SpellType MySpellType
     {
         get
         {
@@ -171,6 +173,19 @@ public class Spell
         set
         {
             icon = value;
+        }
+    }
+
+    public Color SpellColor
+    {
+        get
+        {
+            return spellColor;
+        }
+
+        set
+        {
+            spellColor = value;
         }
     }
 }
