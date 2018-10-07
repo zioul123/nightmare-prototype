@@ -6,13 +6,9 @@ public class Player : Character
 {
     // Stat bars of the player
     [SerializeField]
-    private Stat health;
-    [SerializeField]
     private Stat mana;
 
     // Stats of the player
-    [SerializeField]
-    private float maxHealth;
     [SerializeField]
     private float maxMana;
 
@@ -48,7 +44,6 @@ public class Player : Character
         attackMode = new AttackMode(AttackMode.CHASER, attackModeFrames);
 
         // Start level with max stats always
-        health.Initialize(maxHealth, maxHealth); 
         mana.Initialize(maxMana, maxMana);
 
         // Get the block layer mask
@@ -78,10 +73,10 @@ public class Player : Character
 
         // FOR DEBUG
         if (Input.GetKeyDown(KeyCode.Q)) {
-            health.CurrentValue -= 10;
+            Health.CurrentValue -= 10;
         }
         if (Input.GetKeyDown(KeyCode.F)) {
-            health.CurrentValue += 10;
+            Health.CurrentValue += 10;
         }
         if (Input.GetKeyDown(KeyCode.Z)) {
             mana.CurrentValue -= 10;
@@ -199,7 +194,7 @@ public class Player : Character
     public void InstantiateSpell () 
     {
         SpellScript spellScript = Instantiate(currentSpell.SpellPrefab, exitPoints[exitIndex].transform.position, Quaternion.identity).GetComponent<SpellScript>();
-        spellScript.Speed = currentSpell.Speed;
+        spellScript.Initialize(currentSpell.Speed, currentSpell.Damage);
         if (currentSpell.MySpellType == Spell.SpellType.Projectile) {
             ((ProjectileSpellScript)spellScript).InitialRotation = currentSpell.InitialRotation;
         }
@@ -219,6 +214,11 @@ public class Player : Character
     // Check if enemy is in line of sight
     private bool InLineOfSight ()
     {
+        // Make sure there is a target
+        if (Target == null) {
+            return false;
+        }
+
         Vector3 targetDirection = (Target.position - transform.position).normalized;
         // 8 is blocks layermask
         RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDirection, Vector2.Distance(transform.position, Target.position), blockLayerMask);

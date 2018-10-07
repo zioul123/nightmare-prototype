@@ -26,6 +26,9 @@ public class ProjectileSpellScript : SpellScript
             // Handle rotation
             float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg - InitialRotation;
             rigidBody.transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
+        } else {
+            // Explode it
+            GetComponent<Animator>().SetTrigger("impact");
         }
     }
 

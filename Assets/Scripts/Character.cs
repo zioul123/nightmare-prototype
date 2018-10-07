@@ -20,6 +20,11 @@ public abstract class Character : MonoBehaviour
     // The Character's hitbox
     [SerializeField]
     protected Transform hitBox;
+    // The Character's HP stat
+    [SerializeField]
+    private Stat health;
+    [SerializeField]
+    private float maxHealth;
 
     // The Attack layer to use
     private string attackLayer;
@@ -34,8 +39,13 @@ public abstract class Character : MonoBehaviour
     // Use this for initialization
     protected virtual void Start () 
     {
+        // Get components
         animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
+
+        // Initialize stats
+        Health.Initialize(maxHealth, maxHealth);
+
     }
 
     // Update is called once per frame
@@ -70,6 +80,17 @@ public abstract class Character : MonoBehaviour
             StopCoroutine(attackRoutine);
             attackRoutine = null;
             Debug.Log("Stopped attacking coroutine.");
+        }
+    }
+
+    // Inflict damage on this character
+    public virtual void TakeDamage(float damage) 
+    {
+        Health.CurrentValue -= damage;
+        Debug.Log("Current health: " + Health.CurrentValue);
+
+        if (Health.CurrentValue <= 0) {
+            animator.SetTrigger("die");
         }
     }
 
@@ -134,6 +155,19 @@ public abstract class Character : MonoBehaviour
         get
         {
             return direction != Vector2.zero;
+        }
+    }
+
+    protected Stat Health
+    {
+        get
+        {
+            return health;
+        }
+
+        set
+        {
+            health = value;
         }
     }
 

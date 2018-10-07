@@ -5,6 +5,8 @@ using UnityEngine;
 // Spell that instantly hits an enemy
 public class PointCastSpellScript : SpellScript 
 {
+    // Use to damage only once
+    private bool triggered = false;
     // Use this for initialization
     protected override void Start () 
     {
@@ -16,13 +18,21 @@ public class PointCastSpellScript : SpellScript
     // Handle movement or instant following
     private void FixedUpdate ()
     {
-        transform.position = Target.position;
+        if (Target != null) {
+            transform.position = Target.position;
+        } else {
+            // Explode it
+            GetComponent<Animator>().SetTrigger("impact");
+        }
     }
 
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
-        // After 0.5s, change animation
-        StartCoroutine(Explode());
+        if (!triggered) {
+            // After 0.5s, change animation
+            StartCoroutine(Explode());
+            triggered = true;
+        }
     }
 
     // Trigger change of ring to explosion
@@ -30,5 +40,6 @@ public class PointCastSpellScript : SpellScript
     {
         yield return new WaitForSeconds(0.5f);
         GetComponent<Animator>().SetTrigger("impact");
+        Target.GetComponentInParent<Enemy>().TakeDamage(damage);
     }
 }

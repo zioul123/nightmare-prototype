@@ -45,7 +45,9 @@ public class Stat : MonoBehaviour
             currentFill = CurrentValue / MaxValue;
 
             // Update the stat text.
-            statValue.text = currentValue + " / " + MaxValue;
+            if (statValue != null) {
+                statValue.text = currentValue + " / " + MaxValue;
+            }
         }
     }
 

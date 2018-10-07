@@ -26,6 +26,9 @@ public class GlobalSpellScript : SpellScript
             // Move to the location of the target
             Vector2 direction = Target.transform.position - transform.position;
             rigidBody.velocity = direction.normalized * Speed;
+        } else {
+            // Explode it
+            GetComponent<Animator>().SetTrigger("impact");
         }
     }
 
