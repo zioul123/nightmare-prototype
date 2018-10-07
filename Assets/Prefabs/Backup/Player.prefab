@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 4244371087616386}
   - component: {fileID: 212993277725208936}
   - component: {fileID: 114872733324456088}
+  - component: {fileID: 114153534192617332}
   - component: {fileID: 95282604809058634}
   - component: {fileID: 50093279850865918}
   m_Layer: 0
@@ -479,6 +480,75 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114153534192617332
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1908003918568628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b63d82972a3d542509f61dd701c45189, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  castingBar: {fileID: 0}
+  spellName: {fileID: 0}
+  timeLeft: {fileID: 0}
+  spellIcon: {fileID: 0}
+  canvasGroup: {fileID: 0}
+  spells:
+  - name: Chaser
+    damage: 30
+    speed: 20
+    spellType: 0
+    attackLayer: 1
+    initialRotation: -90
+    initialY: 0
+    castTime: 0.25
+    trailingAnimationTime: 0.25
+    icon: {fileID: 21300000, guid: 3a7251d12243d41e1a75adfa60298c5a, type: 3}
+    spellPrefab: {fileID: 1566472887558776, guid: b51398b51748a4810b7c3c4b9ff1022e,
+      type: 2}
+    spellColor: {r: 0.8113208, g: 0.34060165, b: 0.34060165, a: 1}
+  - name: Agoniser
+    damage: 50
+    speed: 30
+    spellType: 0
+    attackLayer: 1
+    initialRotation: -90
+    initialY: 0
+    castTime: 0.25
+    trailingAnimationTime: 0.25
+    icon: {fileID: 21300010, guid: 3a7251d12243d41e1a75adfa60298c5a, type: 3}
+    spellPrefab: {fileID: 1566472887558776, guid: ed8a4c30551af4717b4a3319d51e0b78,
+      type: 2}
+    spellColor: {r: 0, g: 0.7921569, b: 0, a: 1}
+  - name: Stalker
+    damage: 20
+    speed: 0
+    spellType: 2
+    attackLayer: 2
+    initialRotation: 0
+    initialY: 0
+    castTime: 0.333
+    trailingAnimationTime: 0.08333
+    icon: {fileID: 21300008, guid: 3a7251d12243d41e1a75adfa60298c5a, type: 3}
+    spellPrefab: {fileID: 1566472887558776, guid: 9c03ed5c58e95429bb450759633a6aaf,
+      type: 2}
+    spellColor: {r: 0.6718637, g: 0.045523323, b: 0.8773585, a: 1}
+  - name: Cascader
+    damage: 15
+    speed: 20
+    spellType: 1
+    attackLayer: 2
+    initialRotation: 0
+    initialY: 5
+    castTime: 0.333
+    trailingAnimationTime: 0.08333
+    icon: {fileID: 21300002, guid: 3a7251d12243d41e1a75adfa60298c5a, type: 3}
+    spellPrefab: {fileID: 1566472887558776, guid: 2fd8d0bd242e84c6eb1deeda23316377,
+      type: 2}
+    spellColor: {r: 0.754717, g: 0.4911019, b: 0.09611962, a: 1}
 --- !u!114 &114872733324456088
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -491,15 +561,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  hitBox: {fileID: 0}
   health: {fileID: 0}
-  mana: {fileID: 0}
   maxHealth: 100
+  mana: {fileID: 0}
   maxMana: 50
-  spellPrefabs:
-  - {fileID: 1566472887558776, guid: b51398b51748a4810b7c3c4b9ff1022e, type: 2}
-  - {fileID: 1566472887558776, guid: ed8a4c30551af4717b4a3319d51e0b78, type: 2}
-  - {fileID: 1566472887558776, guid: 9c03ed5c58e95429bb450759633a6aaf, type: 2}
-  - {fileID: 1566472887558776, guid: 2fd8d0bd242e84c6eb1deeda23316377, type: 2}
   exitPoints:
   - {fileID: 1999399140489878}
   - {fileID: 1863503897513400}
