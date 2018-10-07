@@ -194,7 +194,9 @@ public class Player : Character
     public void InstantiateSpell () 
     {
         SpellScript spellScript = Instantiate(currentSpell.SpellPrefab, exitPoints[exitIndex].transform.position, Quaternion.identity).GetComponent<SpellScript>();
-        spellScript.Initialize(currentSpell.Speed, currentSpell.Damage);
+        spellScript.Initialize(currentSpell.Speed, currentSpell.Damage, currentSpell.Aoe);
+
+        // Add fields to the spell as necessary
         if (currentSpell.MySpellType == Spell.SpellType.Projectile) {
             ((ProjectileSpellScript)spellScript).InitialRotation = currentSpell.InitialRotation;
         }

@@ -12,6 +12,7 @@ public abstract class SpellScript : MonoBehaviour {
     [SerializeField]
     private float speed = 1;
     protected int damage = 1;
+    private float aoe;
 
     // Use this for initialization
     protected virtual void Start () {
@@ -30,16 +31,36 @@ public abstract class SpellScript : MonoBehaviour {
             // Stop moving the spell
             rigidBody.velocity = Vector2.zero;
             Speed = 0;
+
+            // Attack all in the AOE
+            if (aoe != 0) {
+                AttackAllInAoe();
+            }
+
             // Stop triggering motion
             Target = null;
         }
     }
 
-    // Set the speed and damage of the spell
-    public void Initialize(float speed, int damage) 
+    // Damage all enemies in the Aoe
+    protected void AttackAllInAoe () 
     {
-        this.Speed = speed;
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(Target.position.x, Target.position.y), 3);
+
+        foreach (Collider2D collider in colliders) {
+            if (collider.gameObject.tag == "Enemy" && (Target.parent.gameObject != collider.gameObject)) {
+                // Inflict damage
+                collider.GetComponentInParent<Enemy>().TakeDamage(damage);
+            }
+        }
+    }
+
+    // Set the speed and damage of the spell
+    public void Initialize(float speed, int damage, float aoe) 
+    {
+        Speed = speed;
         this.damage = damage;
+        this.aoe = aoe;
     }
 
     public float Speed

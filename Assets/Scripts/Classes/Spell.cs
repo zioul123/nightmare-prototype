@@ -15,6 +15,8 @@ public class Spell
     private int damage;
     [SerializeField]
     private float speed;
+    [SerializeField]
+    private float aoe;
 
     // Characteristic of the spell for coding purposes
     [SerializeField]
@@ -186,6 +188,19 @@ public class Spell
         set
         {
             spellColor = value;
+        }
+    }
+
+    public float Aoe
+    {
+        get
+        {
+            return aoe;
+        }
+
+        set
+        {
+            aoe = value;
         }
     }
 }

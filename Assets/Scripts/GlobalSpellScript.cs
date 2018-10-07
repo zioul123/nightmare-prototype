@@ -32,7 +32,6 @@ public class GlobalSpellScript : SpellScript
         }
     }
 
-
     public float InitialY
     {
         get
