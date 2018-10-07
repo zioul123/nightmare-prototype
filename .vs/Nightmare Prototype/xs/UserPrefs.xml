@@ -1,15 +1,17 @@
 ﻿<Properties StartupConfiguration="{3D6E6618-389D-8209-B4C7-1A744D23D913}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/UIManager.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/PointCastSpell.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="214" Column="14" />
+      <File FileName="Assets/Scripts/Player.cs" Line="28" Column="18" />
       <File FileName="Assets/Scripts/Character.cs" Line="1" Column="1" />
       <File FileName="Assets/Scripts/Stat.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/ProjectileSpell.cs" Line="20" Column="9" />
-      <File FileName="Assets/Scripts/GlobalSpell.cs" Line="16" Column="21" />
+      <File FileName="Assets/Scripts/ProjectileSpell.cs" Line="30" Column="1" />
+      <File FileName="Assets/Scripts/GlobalSpell.cs" Line="29" Column="10" />
+      <File FileName="Assets/Scripts/PointCastSpell.cs" Line="14" Column="6" />
+      <File FileName="Assets/Scripts/Spell.cs" Line="22" Column="27" />
       <File FileName="Assets/Scripts/Block.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/GameManager.cs" Line="26" Column="95" />
-      <File FileName="Assets/Scripts/UIManager.cs" Line="4" Column="6" />
+      <File FileName="Assets/Scripts/GameManager.cs" Line="12" Column="29" />
+      <File FileName="Assets/Scripts/UIManager.cs" Line="46" Column="36" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

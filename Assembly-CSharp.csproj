@@ -66,7 +66,10 @@
     <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\Scripts\GlobalSpell.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
+    <Compile Include="Assets\Scripts\PointCastSpell.cs" />
     <Compile Include="Assets\Scripts\ProjectileSpell.cs" />
+    <Compile Include="Assets\Scripts\Spell.cs" />
+    <Compile Include="Assets\Scripts\SpellBehaviour.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
     <Compile Include="Assets\Scripts\UIManager.cs" />
     <Reference Include="UnityEditor.StandardEvents">

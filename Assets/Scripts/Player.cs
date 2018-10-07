@@ -189,7 +189,8 @@ public class Player : Character
     // Cast a spell
     public void InstantiateSpell () 
     {
-        Instantiate(spellPrefabs[attackMode.selectedAttackMode], exitPoints[exitIndex].transform.position, Quaternion.identity); 
+        Spell spell = Instantiate(spellPrefabs[attackMode.selectedAttackMode], exitPoints[exitIndex].transform.position, Quaternion.identity).GetComponent<Spell>();
+        spell.Target = Target;
     }
 
     // Check if enemy is in line of sight
