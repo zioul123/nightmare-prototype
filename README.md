@@ -1,5 +1,5 @@
 # Nightmare
-In this repository, I am creating my first 2D rpg game in Unity, Nightmare. Play the latest prototype of the game [here](https://zioul123.github.io/nightmare-prototype/Hosting/Nightmare_Mechanics_Sandbox/index.html)
+In this repository, I am creating my first 2D rpg game in Unity, Nightmare. Play the latest prototype of the game [here](https://zioul123.github.io/nightmare-prototype/Hosting/NightmareMechanicsSandbox/)
 
 # Overview
 ## Theme
