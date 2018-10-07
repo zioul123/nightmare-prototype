@@ -26,6 +26,8 @@ public class Player : Character
     public Transform Target {
         get; set;
     }
+    // Current selected spell
+    Spell currentSpell;
 
     // Selected Attack Mode
     AttackMode attackMode;
@@ -121,7 +123,7 @@ public class Player : Character
     public void AttemptSpellCast () 
     {
         ActivateBlocks();
-        if (Target != null && !isAttacking && !IsMoving && inLineOfSight())
+        if (Target != null && !isAttacking && !IsMoving && (!requiresLineOfSight() || inLineOfSight()))
         {
             attackRoutine = StartCoroutine(SpellCast());
         }
@@ -130,58 +132,22 @@ public class Player : Character
     // Cast a basic shot
     private IEnumerator SpellCast ()
     {
-        AttackLayer attackLayer;
-        float castTime, trailingAnimationTime;
-        string attackName;
+        currentSpell = spellBook.GetSpell(attackMode.selectedAttackMode);
 
-        switch (attackMode.selectedAttackMode) {
-            case AttackMode.CHASER:
-                attackLayer = AttackLayer.ShootLayer;
-                castTime = 0.25f;
-                trailingAnimationTime = 0.25f;
-                attackName = "Chaser";
-                break;
-            case AttackMode.AGONISER:
-                attackLayer = AttackLayer.ShootLayer;
-                castTime = 0.25f;
-                trailingAnimationTime = 0.25f;
-                attackName = "Agoniser";
-                break;
-            case AttackMode.STALKER:
-                attackLayer = AttackLayer.CastLayer;
-                castTime = 0.333f;
-                trailingAnimationTime = 0.08333f;
-                attackName = "Stalker";
-                break;
-            case AttackMode.CASCADER:
-                attackLayer = AttackLayer.CastLayer;
-                castTime = 0.333f;
-                trailingAnimationTime = 0.08333f;
-                attackName = "Cascader";
-                break;
-            default:
-                Debug.Log("Illegal attack mode; defaulting to Chaser.");
-                attackLayer = AttackLayer.ShootLayer;
-                castTime = 0.25f;
-                trailingAnimationTime = 0.25f;
-                attackName = "Chaser";
-                break;
-        }
-
-        Debug.Log("Begin " + attackName + "Shot");
+        Debug.Log("Begin " + currentSpell.Name + "Shot");
 
         // Trigger attacking
-        SetAttackLayer(attackLayer);
+        SetAttackLayer(currentSpell.AttackLayer);
         isAttacking = true;  // Trigger attacking in script
         animator.SetBool("attack", isAttacking); // Trigger attacking animation in animation controller
 
         // Animation cast time
-        yield return new WaitForSeconds(castTime);
+        yield return new WaitForSeconds(currentSpell.CastTime);
         InstantiateSpell();
-        Debug.Log(attackName + " Shot Fired");
+        Debug.Log(currentSpell.Name + " Shot Fired");
 
         // Carry on trailing animation
-        yield return new WaitForSeconds(trailingAnimationTime);
+        yield return new WaitForSeconds(currentSpell.TrailingAnimationTime);
 
         // End spell cast
         StopAttacking();
@@ -191,8 +157,7 @@ public class Player : Character
     // Cast a spell
     public void InstantiateSpell () 
     {
-        Spell spell = spellBook.GetSpell(attackMode.selectedAttackMode);
-        SpellScript spellScript = Instantiate(spell.SpellPrefab, exitPoints[exitIndex].transform.position, Quaternion.identity).GetComponent<SpellScript>();
+        SpellScript spellScript = Instantiate(currentSpell.SpellPrefab, exitPoints[exitIndex].transform.position, Quaternion.identity).GetComponent<SpellScript>();
         spellScript.Target = Target;
     }
 
@@ -203,6 +168,13 @@ public class Player : Character
         // 8 is blocks layermask
         RaycastHit2D hit = Physics2D.Raycast(transform.position, targetDirection, Vector2.Distance(transform.position, Target.position), blockLayerMask);
         return hit.collider == null;
+    }
+
+    // Check if spell requires line of sight
+    private bool requiresLineOfSight () 
+    {
+        // Currently, everything needs LOS except Stalker
+        return attackMode.selectedAttackMode != AttackMode.STALKER;
     }
 
     // Activate only the correct set of sight blockers

@@ -43,4 +43,134 @@ public class Spell
             return spellPrefab;
         }
     }
+
+    public string Name
+    {
+        get
+        {
+            return name;
+        }
+
+        set
+        {
+            name = value;
+        }
+    }
+
+    public int Damage
+    {
+        get
+        {
+            return damage;
+        }
+
+        set
+        {
+            damage = value;
+        }
+    }
+
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+
+        set
+        {
+            speed = value;
+        }
+    }
+
+    public SpellType SpellType1
+    {
+        get
+        {
+            return spellType;
+        }
+
+        set
+        {
+            spellType = value;
+        }
+    }
+
+    public Character.AttackLayer AttackLayer
+    {
+        get
+        {
+            return attackLayer;
+        }
+
+        set
+        {
+            attackLayer = value;
+        }
+    }
+
+    public float InitialRotation
+    {
+        get
+        {
+            return initialRotation;
+        }
+
+        set
+        {
+            initialRotation = value;
+        }
+    }
+
+    public float InitialY
+    {
+        get
+        {
+            return initialY;
+        }
+
+        set
+        {
+            initialY = value;
+        }
+    }
+
+    public float CastTime
+    {
+        get
+        {
+            return castTime;
+        }
+
+        set
+        {
+            castTime = value;
+        }
+    }
+
+    public float TrailingAnimationTime
+    {
+        get
+        {
+            return trailingAnimationTime;
+        }
+
+        set
+        {
+            trailingAnimationTime = value;
+        }
+    }
+
+    public Sprite Icon
+    {
+        get
+        {
+            return icon;
+        }
+
+        set
+        {
+            icon = value;
+        }
+    }
 }
