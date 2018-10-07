@@ -126,8 +126,8 @@ public class Player : Character
             return;
         }
 
-        Vector3 direction = Target.transform.position - transform.position;
-        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        Vector3 dir = Target.transform.position - transform.position;
+        float angle = Mathf.Atan2(dir.y, dir.x) * Mathf.Rad2Deg;
 
         // Right
         if (-45 < angle && angle <= 45) {
@@ -179,7 +179,12 @@ public class Player : Character
 
         // Animation cast time
         yield return new WaitForSeconds(currentSpell.CastTime);
-        InstantiateSpell();
+        // Final check before shooting
+        if (Target != null && (!RequiresLineOfSight() || InLineOfSight())) {
+            RotatePlayerTowardTarget();
+            InstantiateSpell();
+        }
+
         Debug.Log(currentSpell.Name + " Shot Fired");
 
         // Carry on trailing animation
