@@ -61,17 +61,19 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Block.cs" />
+    <Compile Include="Assets\Scripts\Behaviours\SpellBehaviour.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
-    <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\Scripts\GlobalSpell.cs" />
+    <Compile Include="Assets\Scripts\Classes\Block.cs" />
+    <Compile Include="Assets\Scripts\Classes\Spell.cs" />
+    <Compile Include="Assets\Scripts\GlobalSpellScript.cs" />
+    <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Player.cs" />
-    <Compile Include="Assets\Scripts\PointCastSpell.cs" />
-    <Compile Include="Assets\Scripts\ProjectileSpell.cs" />
-    <Compile Include="Assets\Scripts\Spell.cs" />
-    <Compile Include="Assets\Scripts\SpellBehaviour.cs" />
+    <Compile Include="Assets\Scripts\PointCastSpellScript.cs" />
+    <Compile Include="Assets\Scripts\ProjectileSpellScript.cs" />
+    <Compile Include="Assets\Scripts\SpellScript.cs" />
     <Compile Include="Assets\Scripts\Stat.cs" />
-    <Compile Include="Assets\Scripts\UIManager.cs" />
+    <Compile Include="Assets\SpellBook.cs" />
     <Reference Include="UnityEditor.StandardEvents">
       <HintPath>/Users/louiz/OneDrive/Content Creation/Learning to code/Metal/Nightmare Prototype/Library/ScriptAssemblies/UnityEditor.StandardEvents.dll</HintPath>
     </Reference>

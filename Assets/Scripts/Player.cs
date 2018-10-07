@@ -17,8 +17,7 @@ public class Player : Character
     private float maxMana;
 
     // Spells
-    [SerializeField]
-    private GameObject[] spellPrefabs;
+    private SpellBook spellBook;
     // Spawn point of spell animations
     [SerializeField]
     private GameObject[] exitPoints;
@@ -52,6 +51,9 @@ public class Player : Character
 
         // Get the block layer mask
         blockLayerMask = LayerMask.GetMask("Block");
+
+        // Get Spells
+        spellBook = GetComponent<SpellBook>();
 
         // FOR DEBUG
         //Target = GameObject.Find("Target").transform;
@@ -189,8 +191,9 @@ public class Player : Character
     // Cast a spell
     public void InstantiateSpell () 
     {
-        Spell spell = Instantiate(spellPrefabs[attackMode.selectedAttackMode], exitPoints[exitIndex].transform.position, Quaternion.identity).GetComponent<Spell>();
-        spell.Target = Target;
+        Spell spell = spellBook.GetSpell(attackMode.selectedAttackMode);
+        SpellScript spellScript = Instantiate(spell.SpellPrefab, exitPoints[exitIndex].transform.position, Quaternion.identity).GetComponent<SpellScript>();
+        spellScript.Target = Target;
     }
 
     // Check if enemy is in line of sight
