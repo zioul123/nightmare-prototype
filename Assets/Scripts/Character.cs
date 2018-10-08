@@ -158,7 +158,7 @@ public abstract class Character : MonoBehaviour
         }
     }
 
-    protected Stat Health
+    public Stat Health
     {
         get
         {

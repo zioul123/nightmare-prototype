@@ -3,16 +3,37 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
 public class UIManager : MonoBehaviour 
 {
+    // Singleton pattern
+    private static UIManager instance;
+    public static UIManager Instance 
+    {
+        get {
+            if (instance == null) {
+                instance = FindObjectOfType<UIManager>();
+            }
+            return instance;
+        }
+    }
+
     // Action buttons in the UI
     [SerializeField]
     private Button[] actionButtons;
 
     private KeyCode ab1, ab2, ab3, ab4, ab5, ab6, ab7;
 
+    // The target frame
+    [SerializeField]
+    private GameObject targetFrame;
+    private Stat healthStat;
+    [SerializeField]
+    private Image portraitImage;
+
 	// Use this for initialization
 	void Start () {
+        healthStat = targetFrame.GetComponentInChildren<Stat>();
         ab1 = KeyCode.Alpha1;
         ab2 = KeyCode.Alpha2;
         ab3 = KeyCode.Alpha3;
@@ -51,5 +72,27 @@ public class UIManager : MonoBehaviour
     private void ActionButtonOnClick (int btnIndex) 
     {
         actionButtons[btnIndex].onClick.Invoke();
+    }
+
+    public void ShowTargetFrame(Npc target) 
+    {
+        targetFrame.SetActive(true);
+        healthStat.Initialize(target.Health.CurrentValue, target.Health.MaxValue);
+        portraitImage.sprite = target.Portrait;
+
+        // Add health changed listener to the NPC
+        target.healthChange += UpdateTargetFrame;
+        // Add death listener to the NPC
+        target.characterRemoved += HideTargetFrame;
+    }
+
+    public void HideTargetFrame ()
+    {
+        targetFrame.SetActive(false);
+    }
+
+    public void UpdateTargetFrame (float value) 
+    {
+        healthStat.CurrentValue = value;
     }
 }

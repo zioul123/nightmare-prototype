@@ -74,7 +74,12 @@ public class Stat : MonoBehaviour
     // For initializing values
     public void Initialize (float currentValue, float maxValue)
     {
+        if (content == null) {
+            content = GetComponent<Image>();
+        }
+
         MaxValue = maxValue; // Must be set before currentValue, since Fill depends on it.
         CurrentValue = currentValue;
+        content.fillAmount = currentValue / maxValue; // Instantly fill it up.
     }
 }

@@ -15,7 +15,14 @@ public class Enemy : Npc
 
     public override void Deselect()
     {
+        base.Deselect();
         healthGroup.alpha = 0;
+    }
+
+    public override void TakeDamage(float damage)
+    {
+        base.TakeDamage(damage);
+        OnHealthChange(Health.CurrentValue);
     }
 
 }

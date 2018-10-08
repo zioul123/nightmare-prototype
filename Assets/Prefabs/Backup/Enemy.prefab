@@ -259,6 +259,7 @@ MonoBehaviour:
   hitBox: {fileID: 4541702412634650}
   health: {fileID: 114914718183351564}
   maxHealth: 100
+  portrait: {fileID: 21300000, guid: a3d429f6cde14455798874898121fa4f, type: 3}
   healthGroup: {fileID: 225220183481357014}
 --- !u!114 &114417913751677670
 MonoBehaviour:

@@ -40,6 +40,7 @@ public class GameManager : MonoBehaviour
 
                 currentTarget = hit.collider.GetComponent<Npc>();
                 player.Target = currentTarget.Select();
+                UIManager.Instance.ShowTargetFrame(currentTarget);
                 Debug.Log("Selected target: " + hit.collider.gameObject.name);
             
             } else {
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
                 }
                 currentTarget = null;
                 player.Target = null;
+                UIManager.Instance.HideTargetFrame();
                 Debug.Log("Deselected target.");
             }
         }
