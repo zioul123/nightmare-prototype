@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Classes\Spell.cs" />
     <Compile Include="Assets\Scripts\Enemy.cs" />
     <Compile Include="Assets\Scripts\GlobalSpellScript.cs" />
+    <Compile Include="Assets\Scripts\LevelRendering\WaterTile.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\UIManager.cs" />
     <Compile Include="Assets\Scripts\Npc.cs" />
