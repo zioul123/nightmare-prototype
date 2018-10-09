@@ -32,14 +32,13 @@ public class ProjectileSpellScript : SpellScript
         }
     }
 
-
+    // Getter
     public float InitialRotation
     {
         get
         {
             return initialRotation;
         }
-
         set
         {
             initialRotation = value;

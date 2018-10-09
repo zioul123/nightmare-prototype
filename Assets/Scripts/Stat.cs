@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+// Attached to the fill of the stat bar to control fill values.
 public class Stat : MonoBehaviour 
 {
     // The Stat's text indicator.

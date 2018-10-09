@@ -500,6 +500,7 @@ MonoBehaviour:
   - name: Chaser
     damage: 30
     speed: 20
+    aoe: 0
     spellType: 0
     attackLayer: 1
     initialRotation: -90
@@ -513,6 +514,7 @@ MonoBehaviour:
   - name: Agoniser
     damage: 50
     speed: 30
+    aoe: 0
     spellType: 0
     attackLayer: 1
     initialRotation: -90
@@ -526,6 +528,7 @@ MonoBehaviour:
   - name: Stalker
     damage: 20
     speed: 0
+    aoe: 0
     spellType: 2
     attackLayer: 2
     initialRotation: 0
@@ -539,6 +542,7 @@ MonoBehaviour:
   - name: Cascader
     damage: 15
     speed: 20
+    aoe: 3
     spellType: 1
     attackLayer: 2
     initialRotation: 0

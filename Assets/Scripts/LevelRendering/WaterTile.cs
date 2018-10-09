@@ -5,6 +5,7 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
+// Handles water tiles on the Tile Palette and Tilemap.
 public class WaterTile : Tile
 {
     // All the sprites
@@ -32,13 +33,13 @@ public class WaterTile : Tile
             }
         }
 
-
         base.RefreshTile(position, tilemap);
     }
 
     // Used to change the tiles.
     public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
     {
+        // Initialize the bitmask
         uint composition = 0;
 
         // Generate bitmap of the surrounding tiles, 1 = water, 0 = nowater, order:
@@ -56,10 +57,7 @@ public class WaterTile : Tile
                 }
             }
         }
-
         tileData.sprite = SelectSprite(composition);
-
-        // base.GetTileData(position, tilemap, ref tileData);
     }
 
     // Select the sprite based on the bitmask
@@ -116,10 +114,10 @@ public class WaterTile : Tile
             uint t_x = x & 31; // 00011111. Guaranteed to be 11X1X
             switch (t_x)
             {
-                case 26: return waterSprites[16];   // 11010
-                case 27: return waterSprites[6];    // 11011
-                case 30: return waterSprites[14];   // 11110
-                case 31: return waterSprites[3];    // 11111
+            case 26: return waterSprites[16];   // 11010
+            case 27: return waterSprites[6];    // 11011
+            case 30: return waterSprites[14];   // 11110
+            case 31: return waterSprites[3];    // 11111
             }
         // Right is ground              X1X10X1X
         } else if ((x & (1 << 1)) != 0 && (x & (1 << 3)) == 0 && (x & (1 << 4)) != 0 && (x & (1 << 6)) != 0) {
@@ -127,10 +125,10 @@ public class WaterTile : Tile
             uint t_x = (x & 192) >> 3 | (x & 16) >> 2 | (x & 6) >> 1; // 11_1_11_. Guaranteed to be X11X1.
             switch (t_x)
             {
-                case 13: return waterSprites[15];   // 01101
-                case 15: return waterSprites[13];   // 01111
-                case 29: return waterSprites[11];   // 11101
-                case 31: return waterSprites[12];   // 11111
+            case 13: return waterSprites[15];   // 01101
+            case 15: return waterSprites[13];   // 01111
+            case 29: return waterSprites[11];   // 11101
+            case 31: return waterSprites[12];   // 11111
             }
         // Left is ground               X1X01X1X
         } else if ((x & (1 << 1)) != 0 && (x & (1 << 3)) != 0 && (x & (1 << 4)) == 0 && (x & (1 << 6)) != 0) {
@@ -138,20 +136,20 @@ public class WaterTile : Tile
             uint t_x = (x & 96) >> 2 | (x & 8) >> 1 | (x & 3); // _11_1_11. Guaranteed to be 1X11X.
             switch (t_x)
             {
-                case 22: return waterSprites[10];   // 10110
-                case 23: return waterSprites[9];    // 10111
-                case 30: return waterSprites[8];    // 11110
-                case 31: return waterSprites[7];    // 11111
+            case 22: return waterSprites[10];   // 10110
+            case 23: return waterSprites[9];    // 10111
+            case 30: return waterSprites[8];    // 11110
+            case 31: return waterSprites[7];    // 11111
             }
         // Bottom is ground             X1X11X0X
         } else if ((x & (1 << 1)) == 0 && (x & (1 << 3)) != 0 && (x & (1 << 4)) != 0 && (x & (1 << 6)) != 0) {
             uint t_x = (x & 248) >> 3; // 11111000. Guaranteed to be X1X11
             switch (t_x)
             {
-                case 11: return waterSprites[22];   // 01011
-                case 15: return waterSprites[21];   // 01111
-                case 27: return waterSprites[20];   // 11011
-                case 31: return waterSprites[19];   // 11111
+            case 11: return waterSprites[22];   // 01011
+            case 15: return waterSprites[21];   // 01111
+            case 27: return waterSprites[20];   // 11011
+            case 31: return waterSprites[19];   // 11111
             }
         }
 

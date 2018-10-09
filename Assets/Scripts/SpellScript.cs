@@ -45,8 +45,10 @@ public abstract class SpellScript : MonoBehaviour {
     // Damage all enemies in the Aoe
     protected void AttackAllInAoe () 
     {
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(Target.position.x, Target.position.y), 3);
+        // Get all enemies in AOE
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(new Vector2(Target.position.x, Target.position.y), aoe);
 
+        // Damage all enemies that are not the original target (prevent double damage)
         foreach (Collider2D collider in colliders) {
             if (collider.gameObject.tag == "Enemy" && (Target.parent.gameObject != collider.gameObject)) {
                 // Inflict damage

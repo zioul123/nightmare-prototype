@@ -26,6 +26,7 @@ public class PointCastSpellScript : SpellScript
         }
     }
 
+    // Trigger instantly, and only once
     protected override void OnTriggerEnter2D(Collider2D collision)
     {
         if (!triggered) {

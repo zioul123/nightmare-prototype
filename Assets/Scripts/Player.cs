@@ -17,11 +17,9 @@ public class Player : Character
     // Spawn point of spell animations
     [SerializeField]
     private GameObject[] exitPoints;
-    private int exitIndex = 0; // Down
+    private int exitIndex = 0; // Down by default
     // Target of the spell
-    public Transform Target {
-        get; set;
-    }
+    public Transform Target { get; set; }
     // Current selected spell
     Spell currentSpell;
 
@@ -31,7 +29,7 @@ public class Player : Character
     [SerializeField]
     private GameObject[] attackModeFrames;
 
-    // Line of sight blocker
+    // Line of sight blocker, for AOE facing attacks (Not yet implemented)
     [SerializeField]
     private Block[] blocks;
     // Layer mask of blocker
@@ -52,9 +50,6 @@ public class Player : Character
         // Get Spells
         spellBook = GetComponent<SpellBook>();
 
-        // FOR DEBUG
-        //Target = GameObject.Find("Target").transform;
-
         base.Start();
 	}
 	
@@ -73,7 +68,7 @@ public class Player : Character
 
         // FOR DEBUG
         if (Input.GetKeyDown(KeyCode.Q)) {
-            Health.CurrentValue -= 10;
+            TakeDamage(10);
         }
         if (Input.GetKeyDown(KeyCode.F)) {
             Health.CurrentValue += 10;

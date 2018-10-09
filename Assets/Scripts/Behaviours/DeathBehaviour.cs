@@ -18,7 +18,7 @@ public class DeathBehaviour : StateMachineBehaviour
         timePassed += Time.deltaTime;
 
         if (timePassed >= 3) {
-            animator.GetComponent<Npc>().OnCharacterRemoved();
+            animator.GetComponent<Npc>().OnCharacterRemoved(); // Call all listeners for NPC's death, and destroy the game object
         }
 
 	}

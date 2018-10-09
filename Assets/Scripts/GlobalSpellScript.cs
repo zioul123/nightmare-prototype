@@ -32,13 +32,13 @@ public class GlobalSpellScript : SpellScript
         }
     }
 
+    // Getter
     public float InitialY
     {
         get
         {
             return initialY;
         }
-
         set
         {
             initialY = value;

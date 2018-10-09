@@ -1,20 +1,12 @@
 ﻿<Properties StartupConfiguration="{3D6E6618-389D-8209-B4C7-1A744D23D913}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Stat.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Player.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="195" Column="6" />
-      <File FileName="Assets/Scripts/Character.cs" Line="146" Column="1" />
-      <File FileName="Assets/Scripts/SpellScript.cs" Line="36" Column="20" />
-      <File FileName="Assets/Scripts/GlobalSpellScript.cs" Line="34" Column="1" />
-      <File FileName="Assets/Scripts/PointCastSpellScript.cs" Line="29" Column="1" />
-      <File FileName="Assets/Scripts/ProjectileSpellScript.cs" Line="31" Column="59" />
-      <File FileName="Assets/Scripts/Classes/Spell.cs" Line="19" Column="21" />
-      <File FileName="Assets/Scripts/Managers/GameManager.cs" Line="38" Column="31" />
-      <File FileName="Assets/Scripts/Stat.cs" Line="80" Column="1" />
-      <File FileName="Assets/Scripts/Managers/UIManager.cs" Line="86" Column="52" />
-      <File FileName="Assets/Scripts/Enemy.cs" Line="18" Column="25" />
-      <File FileName="Assets/Scripts/Npc.cs" Line="28" Column="1" />
-      <File FileName="Assets/Scripts/Behaviours/DeathBehaviour.cs" Line="8" Column="1" />
+      <File FileName="Assets/Scripts/Player.cs" Line="16" Column="20" />
+      <File FileName="Assets/Scripts/Character.cs" Line="149" Column="44" />
+      <File FileName="Assets/Scripts/SpellScript.cs" Line="9" Column="26" />
+      <File FileName="Assets/Scripts/ProjectileSpellScript.cs" Line="42" Column="1" />
+      <File FileName="Assets/Scripts/GlobalSpellScript.cs" Line="44" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />

@@ -59,3 +59,5 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  targetFrame: {fileID: 0}
+  portraitImage: {fileID: 0}

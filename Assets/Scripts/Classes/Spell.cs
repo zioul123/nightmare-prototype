@@ -40,6 +40,7 @@ public class Spell
     [SerializeField]
     private Color spellColor;
 
+    // Getters
     public GameObject SpellPrefab
     {
         get
@@ -54,11 +55,6 @@ public class Spell
         {
             return name;
         }
-
-        set
-        {
-            name = value;
-        }
     }
 
     public int Damage
@@ -66,11 +62,6 @@ public class Spell
         get
         {
             return damage;
-        }
-
-        set
-        {
-            damage = value;
         }
     }
 
@@ -80,11 +71,6 @@ public class Spell
         {
             return speed;
         }
-
-        set
-        {
-            speed = value;
-        }
     }
 
     public SpellType MySpellType
@@ -92,11 +78,6 @@ public class Spell
         get
         {
             return spellType;
-        }
-
-        set
-        {
-            spellType = value;
         }
     }
 
@@ -106,11 +87,6 @@ public class Spell
         {
             return attackLayer;
         }
-
-        set
-        {
-            attackLayer = value;
-        }
     }
 
     public float InitialRotation
@@ -118,11 +94,6 @@ public class Spell
         get
         {
             return initialRotation;
-        }
-
-        set
-        {
-            initialRotation = value;
         }
     }
 
@@ -132,11 +103,6 @@ public class Spell
         {
             return initialY;
         }
-
-        set
-        {
-            initialY = value;
-        }
     }
 
     public float CastTime
@@ -144,11 +110,6 @@ public class Spell
         get
         {
             return castTime;
-        }
-
-        set
-        {
-            castTime = value;
         }
     }
 
@@ -158,11 +119,6 @@ public class Spell
         {
             return trailingAnimationTime;
         }
-
-        set
-        {
-            trailingAnimationTime = value;
-        }
     }
 
     public Sprite Icon
@@ -170,11 +126,6 @@ public class Spell
         get
         {
             return icon;
-        }
-
-        set
-        {
-            icon = value;
         }
     }
 
@@ -184,11 +135,6 @@ public class Spell
         {
             return spellColor;
         }
-
-        set
-        {
-            spellColor = value;
-        }
     }
 
     public float Aoe
@@ -196,11 +142,6 @@ public class Spell
         get
         {
             return aoe;
-        }
-
-        set
-        {
-            aoe = value;
         }
     }
 }
