@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\Behaviours\DeathBehaviour.cs" />
     <Compile Include="Assets\Scripts\Behaviours\SpellBehaviour.cs" />
+    <Compile Include="Assets\Scripts\CameraFollow.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\Classes\Block.cs" />
     <Compile Include="Assets\Scripts\Classes\Spell.cs" />

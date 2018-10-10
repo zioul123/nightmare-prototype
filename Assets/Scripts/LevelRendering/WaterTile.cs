@@ -16,6 +16,11 @@ public class WaterTile : Tile
     [SerializeField]
     private Sprite previewSprite;
 
+    public override bool StartUp(Vector3Int position, ITilemap tilemap, GameObject go)
+    {
+        return base.StartUp(position, tilemap, go);
+    }
+
     // Used when putting down a tile. Refresh the tile itself, and its neighbours.
     // Only need to refresh its immediate neighbours, tiles only influence those.
     // This calls GetTileData.
@@ -39,6 +44,8 @@ public class WaterTile : Tile
     // Used to change the tiles.
     public override void GetTileData(Vector3Int position, ITilemap tilemap, ref TileData tileData)
     {
+        base.GetTileData(position, tilemap, ref tileData);
+
         // Initialize the bitmask
         uint composition = 0;
 

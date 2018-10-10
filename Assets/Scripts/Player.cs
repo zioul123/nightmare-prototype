@@ -35,6 +35,9 @@ public class Player : Character
     // Layer mask of blocker
     int blockLayerMask;
 
+    // Movement limits. They are set by Camera.
+    private Vector3 min, max;
+
     // Use this for initialization
     protected override void Start () 
     {
@@ -58,7 +61,19 @@ public class Player : Character
     {
         GetInput();
         base.Update();
+
+        // Prevent movement outside screen bounds
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, min.x, max.x),
+                                         Mathf.Clamp(transform.position.y, min.y, max.y),
+                                         transform.position.z);
 	}
+
+    // Set the movement limits of the player so she cannot leave the map
+    public void SetLimits(Vector3 min, Vector3 max) 
+    {
+        this.min = min;
+        this.max = max;
+    }
 
     // Listens for player input
     private void GetInput () 
@@ -182,7 +197,6 @@ public class Player : Character
 
         // End spell cast
         StopAttacking();
-
     }
 
     // Cast a spell
@@ -245,6 +259,7 @@ public class Player : Character
         attackMode.SetAttackMode(selectedMode);
     }
 
+    // Used to encapsulate which attack is being used to control UI, as well as a link with the SpellBook
     class AttackMode {
         // Attack and spell indices
         // Attack modes
@@ -286,6 +301,5 @@ public class Player : Character
             }
             attackModeFrames[selectedAttackMode].SetActive(true);
         }
-
     }
 }
