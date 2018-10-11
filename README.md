@@ -220,5 +220,33 @@ Todo.
 ## Animation
 Todo.
 
+# Release Plan
+## v0.1 - Simple Mechanics
+- Player has 4 attack skills + melee
+- Autotargetting of closest enemy
+- Enemies move and attack player
+- Enemy selection circles
+- Enemy HP bars fade over time and appear on damage
+
+## v0.2 - Extended Mechanics
+- Player has 7 skills
+  - 4 attack modes + melee
+  - 3 crowd control skills
+- Ranged enemies
+
+## v0.3 - Simple Game 
+- Start menu
+- Saving
+- Multiple kinds of enemies
+- Damage balancing
+
+## v0.4 - Levelling mechanics
+- EXP system up
+- Skills can be levelled up
+
+## v0.5 - World navigation
+- Basic world map up
+- World levels
+
 # Credits
 This document is based on [Alec Markarian and Benjamin Stanley's GDD Template](https://docs.google.com/document/d/1-I08qX76DgSFyN1ByIGtPuqXh7bVKraHcNIA25tpAzE/edit).
