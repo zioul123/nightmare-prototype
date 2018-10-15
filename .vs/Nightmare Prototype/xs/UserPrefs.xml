@@ -1,15 +1,13 @@
 ﻿<Properties StartupConfiguration="{3D6E6618-389D-8209-B4C7-1A744D23D913}|">
   <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/LevelRendering/TreeTile.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Enemy.cs">
     <Files>
-      <File FileName="Assets/Scripts/Player.cs" Line="72" Column="11" />
+      <File FileName="Assets/Scripts/Enemy.cs" Line="25" Column="25" />
+      <File FileName="Assets/Scripts/Npc.cs" Line="21" Column="6" />
       <File FileName="Assets/Scripts/Character.cs" Line="67" Column="17" />
-      <File FileName="Assets/Scripts/SpellScript.cs" Line="9" Column="26" />
-      <File FileName="Assets/Scripts/ProjectileSpellScript.cs" Line="42" Column="1" />
-      <File FileName="Assets/Scripts/GlobalSpellScript.cs" Line="44" Column="21" />
-      <File FileName="Assets/Scripts/LevelRendering/TreeTile.cs" Line="13" Column="59" />
+      <File FileName="Assets/Scripts/Player.cs" Line="251" Column="25" />
       <File FileName="Assets/Scripts/CameraFollow.cs" Line="37" Column="12" />
-      <File FileName="Assets/Scripts/LevelRendering/WaterTile.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/Classes/Block.cs" Line="13" Column="17" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
