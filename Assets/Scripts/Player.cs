@@ -35,6 +35,9 @@ public class Player : Character
     // Layer mask of blocker
     int blockLayerMask;
 
+    // Layer mask of clickables
+    int clickableLayerMask;
+
     // Movement limits. They are set by Camera.
     private Vector3 min, max;
 
@@ -49,6 +52,9 @@ public class Player : Character
 
         // Get the block layer mask
         blockLayerMask = LayerMask.GetMask("Block");
+
+        // Get the clickable layer mask
+        clickableLayerMask = LayerMask.GetMask("Clickable");
 
         // Get Spells
         spellBook = GetComponent<SpellBook>();
@@ -82,7 +88,7 @@ public class Player : Character
         direction = Vector2.zero;
 
         // FOR DEBUG
-        if (Input.GetKeyDown(KeyCode.Q)) {
+        if (Input.GetKeyDown(KeyCode.P)) {
             TakeDamage(10);
         }
         if (Input.GetKeyDown(KeyCode.F)) {
@@ -113,6 +119,11 @@ public class Player : Character
             exitIndex = 2;
         }
 
+        // Targetting closeset enemy
+        if (Input.GetKeyDown(KeyCode.Q)) {
+            TargetClosestEnemy();
+        }
+
         // Handle Skills
         // Toggle Attack mode
         if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.LeftShift)) {
@@ -121,6 +132,29 @@ public class Player : Character
         // Cast Attack Spell
         if (Input.GetKeyDown(KeyCode.Space)) {
             AttemptSpellCast(false);
+        }
+    }
+
+    // Targets the closest enemy
+    public void TargetClosestEnemy() 
+    {
+        Collider2D closestEnemy = null;
+        // Check 20 radii for an enemy in growing order
+        for (float r = 0.1f; r < 10 && closestEnemy == null; r += 0.5f) {
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, r, clickableLayerMask);
+            foreach (Collider2D collider in colliders) {
+                // Select if the target is an enemy and not dead
+                if (collider.gameObject.tag == "Enemy" && collider.GetComponent<Character>().Health.CurrentValue != 0) {
+                    closestEnemy = collider;
+                    break;
+                }
+            }
+        }
+
+        // Only target if there exists an enemy
+        if (closestEnemy != null) {
+            GameManager gm = GameManager.Instance;
+            gm.SelectTarget(closestEnemy);
         }
     }
 
