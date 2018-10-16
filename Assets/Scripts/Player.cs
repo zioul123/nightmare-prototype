@@ -11,6 +11,8 @@ public class Player : Character
     // Stats of the player
     [SerializeField]
     private float maxMana;
+    [SerializeField]
+    private float meleeDamage;
 
     // Spells
     private SpellBook spellBook;
@@ -23,7 +25,7 @@ public class Player : Character
     // Current selected spell
     Spell currentSpell;
 
-    // Selected Attack Mode
+    // Selected Attack Mode (Chaser, Agoniser, Stalker, Cascader). Melee is separate mechanic.
     AttackMode attackMode;
     // GUI Attack Mode Highlighter
     [SerializeField]
@@ -34,6 +36,12 @@ public class Player : Character
     private Block[] blocks;
     // Layer mask of blocker
     int blockLayerMask;
+
+    // Melee AOEs
+    [SerializeField]
+    private GameObject[] meleeAoes;
+    // Active Melee AOE
+    GameObject meleeAoe;
 
     // Layer mask of clickables
     int clickableLayerMask;
@@ -72,6 +80,11 @@ public class Player : Character
         transform.position = new Vector3(Mathf.Clamp(transform.position.x, min.x, max.x),
                                          Mathf.Clamp(transform.position.y, min.y, max.y),
                                          transform.position.z);
+
+        // Change the melee input box if necessary
+        if (isMeleeing) {
+            ActivateMeleeAoe(exitIndex);
+        }
 	}
 
     // Set the movement limits of the player so she cannot leave the map
@@ -101,11 +114,13 @@ public class Player : Character
             mana.CurrentValue += 10;
         }
 
-        // Handle Movement and Exit Points
-        if (Input.GetKey(KeyCode.W)) {
-            direction += Vector2.up;
-            exitIndex = 1;
+        // Targetting closest enemy
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            TargetClosestEnemy();
         }
+
+        // Handle Movement and Exit Points
         if (Input.GetKey(KeyCode.A)) {
             direction += Vector2.left;
             exitIndex = 3;
@@ -114,14 +129,14 @@ public class Player : Character
             direction += Vector2.down;
             exitIndex = 0;
         }
+        if (Input.GetKey(KeyCode.W))
+        {
+            direction += Vector2.up;
+            exitIndex = 1;
+        }
         if (Input.GetKey(KeyCode.S)) {
             direction += Vector2.right;
             exitIndex = 2;
-        }
-
-        // Targetting closeset enemy
-        if (Input.GetKeyDown(KeyCode.Q)) {
-            TargetClosestEnemy();
         }
 
         // Handle Skills
@@ -132,6 +147,10 @@ public class Player : Character
         // Cast Attack Spell
         if (Input.GetKeyDown(KeyCode.Space)) {
             AttemptSpellCast(false);
+        }
+        // Melee
+        if (Input.GetKeyDown(KeyCode.F)) {
+            AttemptMelee();
         }
     }
 
@@ -189,6 +208,65 @@ public class Player : Character
             animator.SetFloat("y", 1);
             exitIndex = 1;
         }
+    }
+
+    // Check conditions whether melee is possible and attack
+    public void AttemptMelee() 
+    {
+        if (!isAttacking)
+        {
+            attackRoutine = StartCoroutine(MeleeAttack());
+        }
+    }
+
+    // Use melee. Precondition: All conditions to melee were already checked.
+    private IEnumerator MeleeAttack()
+    {
+        Debug.Log("Begin melee attack");
+
+        // Trigger attacking
+        SetAttackLayer(AttackLayer.MeleeLayer);
+        isAttacking = true;
+        animator.SetBool("attack", isAttacking);
+        isMeleeing = true;
+
+        // Show the AOE box
+        meleeAoe = meleeAoes[exitIndex];
+        meleeAoe.SetActive(true);
+
+        // Animation attack time
+        yield return new WaitForSeconds(0.3333f);
+        EffectMelee();
+        Debug.Log("Melee executed");
+        isMeleeing = false; // Moving will now cancel attack
+
+        // Trailing animation time
+        yield return new WaitForSeconds(0.1667f);
+        StopAttacking();
+    }
+
+    // Cast AOE damage to enemies in melee area
+    private void EffectMelee() 
+    {
+        Collider2D[] colliders = Physics2D.OverlapBoxAll(meleeAoe.transform.position, meleeAoe.transform.lossyScale, 0, clickableLayerMask);
+        foreach (Collider2D collider in colliders) {
+            if (collider.gameObject.tag == "Enemy" && collider.GetComponent<Character>().Health.CurrentValue != 0) {
+                collider.GetComponent<Enemy>().TakeDamage(meleeDamage);
+            }
+        }
+
+        // Hide AOE box
+        meleeAoe.SetActive(false);
+    }
+
+    // Activate the specified AOE and deactivate the others
+    private void ActivateMeleeAoe(int exitPoint) 
+    {
+        for (int i = 0; i < 4; i++) {
+            meleeAoes[i].SetActive(false);
+        }
+        meleeAoe = meleeAoes[exitIndex];
+        meleeAoe.SetActive(true);
     }
 
     // Check conditions whether spellcast is possible and attack.
@@ -252,7 +330,8 @@ public class Player : Character
     // Stop attacking
     public override void StopAttacking()
     {
-        spellBook.StopCasting();
+        spellBook.StopCasting(); // If doing melee, this doesn't do anything
+        meleeAoe.SetActive(false); // If spell casting, this doesn't do anything
         base.StopAttacking();
     }
 
@@ -329,11 +408,14 @@ public class Player : Character
         public void SetAttackMode(int attackMode)
         {
             selectedAttackMode = attackMode;
-            foreach (GameObject frame in attackModeFrames)
-            {
-                frame.SetActive(false);
+
+            if (attackMode < 4) { // Change attack mode 
+                foreach (GameObject frame in attackModeFrames)
+                {
+                    frame.SetActive(false);
+                }
+                attackModeFrames[selectedAttackMode].SetActive(true);
             }
-            attackModeFrames[selectedAttackMode].SetActive(true);
         }
     }
 }

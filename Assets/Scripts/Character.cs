@@ -30,6 +30,8 @@ public abstract class Character : MonoBehaviour
     private string attackLayer;
     // Whether the Character is attacking
     protected bool isAttacking = false;
+    // Whether using melee or another kind of attack; melee can occur while moving
+    protected bool isMeleeing = false;
     // Attack Coroutine
     protected Coroutine attackRoutine;
 
@@ -102,7 +104,9 @@ public abstract class Character : MonoBehaviour
     {
         if (IsMoving) {
             SetWalkAnimation(direction);
-            StopAttacking();
+            if (!isMeleeing) {
+                StopAttacking();
+            }
         } else if (isAttacking) {
             SetAttackAnimation();
         } else {
