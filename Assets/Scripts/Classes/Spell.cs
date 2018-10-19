@@ -14,6 +14,8 @@ public class Spell
     [SerializeField]
     private int damage;
     [SerializeField]
+    private int range;
+    [SerializeField]
     private float speed;
     [SerializeField]
     private float aoe;
@@ -142,6 +144,14 @@ public class Spell
         get
         {
             return aoe;
+        }
+    }
+
+    public int Range
+    {
+        get
+        {
+            return range;
         }
     }
 }

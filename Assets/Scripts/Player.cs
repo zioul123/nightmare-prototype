@@ -272,10 +272,12 @@ public class Player : Character
     // Check conditions whether spellcast is possible and attack.
     public void AttemptSpellCast (bool isDirectional) 
     {
+        currentSpell = spellBook.GetSpell(attackMode.selectedAttackMode);
+
         if (isDirectional) {
             ActivateBlocks();
         }
-        if (Target != null && !isAttacking && !IsMoving && (!RequiresLineOfSight() || InLineOfSight()))
+        if (Target != null && !isAttacking && !IsMoving && (!RequiresLineOfSight() || InLineOfSight()) && InRange())
         {
             RotatePlayerTowardTarget();
             attackRoutine = StartCoroutine(SpellCast());
@@ -285,11 +287,10 @@ public class Player : Character
     // Cast a basic shot. Precondition: All conditions to cast a spell were already met.
     private IEnumerator SpellCast ()
     {
-        currentSpell = spellBook.GetSpell(attackMode.selectedAttackMode);
-
         Debug.Log("Begin " + currentSpell.Name + "Shot");
 
         // Trigger attacking
+        spellBook.StartCastBar(attackMode.selectedAttackMode);
         SetAttackLayer(currentSpell.AttackLayer);
         isAttacking = true;  // Trigger attacking in script
         animator.SetBool("attack", isAttacking); // Trigger attacking animation in animation controller
@@ -336,6 +337,17 @@ public class Player : Character
             meleeAoe.SetActive(false); // If spell casting, this doesn't do anything
         }
         base.StopAttacking();
+    }
+
+    // Check if enemy is in range of current spell
+    private bool InRange ()
+    {
+        // Make sure there is a target
+        if (Target == null) {
+            return false;
+        }
+
+        return (Target.position - transform.position).magnitude <= currentSpell.Range;
     }
 
     // Check if enemy is in line of sight

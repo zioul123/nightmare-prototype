@@ -38,6 +38,12 @@ public class SpellBook : MonoBehaviour
     // Get a spell from the SpellBook
     public Spell GetSpell (int index) 
     {
+        return spells[index];
+    }
+
+    // Activate the cast bar
+    public void StartCastBar (int index)
+    {
         // Set UI elements
         castingBar.color = spells[index].SpellColor;
         spellName.text = spells[index].Name;
@@ -50,8 +56,6 @@ public class SpellBook : MonoBehaviour
 
         // Fade the bar in
         fadeRoutine = StartCoroutine(FadeBar());
-
-        return spells[index];
     }
 
     private IEnumerator Progress (int index) 
