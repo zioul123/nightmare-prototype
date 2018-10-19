@@ -331,7 +331,10 @@ public class Player : Character
     public override void StopAttacking()
     {
         spellBook.StopCasting(); // If doing melee, this doesn't do anything
-        meleeAoe.SetActive(false); // If spell casting, this doesn't do anything
+        if (meleeAoe != null)
+        {
+            meleeAoe.SetActive(false); // If spell casting, this doesn't do anything
+        }
         base.StopAttacking();
     }
 
