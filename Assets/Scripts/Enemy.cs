@@ -12,6 +12,8 @@ public class Enemy : Npc
     private SpriteRenderer selectionCircle;
     // To stop the health group from fading
     private Coroutine hideHealthRoutine;
+    // The target of this enemy
+    private Transform target;
 
     // When selected, show the healthGroup
     public override Transform Select()
@@ -34,13 +36,27 @@ public class Enemy : Npc
     {
         base.Deselect();
         // If the enemy is undamaged, hide health
-        if (Health.CurrentValue == Health.MaxValue) {
+        if (!IsDamaged) {
             HideHealthGroup();
         // Otherwise make it disappear after a few seconds
         } else {
             hideHealthRoutine = StartCoroutine(HideHealthGroupAfterDelay());
         }
         HideSelectionCircle();
+    }
+
+    protected override void Update()
+    {
+        base.Update();
+        FollowTarget();
+    }
+
+    // Follow the target
+    private void FollowTarget()
+    {
+        if (!IsDead && target != null) {
+            transform.position = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+        }
     }
 
     // Hide the healthgroup after a few seconds delay
@@ -105,4 +121,8 @@ public class Enemy : Npc
         selectionCircle.gameObject.SetActive(false);
     }
 
+    // Getter/setters
+    public Transform Target { get { return target; } set { target = value; }}
+    public bool IsDamaged { get { return Health.CurrentValue != Health.MaxValue; } }
+    public bool IsDead { get { return Health.CurrentValue == 0; } }
 }

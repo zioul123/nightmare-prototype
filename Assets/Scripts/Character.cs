@@ -10,7 +10,7 @@ public abstract class Character : MonoBehaviour
 
     // The Character's movement speed
     [SerializeField]
-    private float speed = 1f;
+    protected float speed = 1f;
     // The Character's direction
     protected Vector2 direction;
     // The Character's animator
