@@ -14,6 +14,8 @@ public class Enemy : Npc
     private Coroutine hideHealthRoutine;
     // The target of this enemy
     private Transform target;
+    // The possible target of this enemy that is outside of aggro range
+    private Transform farTarget;
 
     // When selected, show the healthGroup
     public override Transform Select()
@@ -72,6 +74,13 @@ public class Enemy : Npc
         base.TakeDamage(damage);
         OnHealthChange(Health.CurrentValue);
 
+        // Target the person who attacked it if possible
+        if (target == null) {
+            if (farTarget != null) {
+                target = farTarget;
+            }
+        }
+
         // Health is not currently shown - not selected nor attacked within 5 seconds ago
         if (healthGroup.alpha == 0) {
             ShowHealthGroup();
@@ -123,6 +132,8 @@ public class Enemy : Npc
 
     // Getter/setters
     public Transform Target { get { return target; } set { target = value; }}
+    public Transform FarTarget { get { return farTarget; } set { farTarget = value; } }
     public bool IsDamaged { get { return Health.CurrentValue != Health.MaxValue; } }
     public bool IsDead { get { return Health.CurrentValue == 0; } }
+
 }

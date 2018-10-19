@@ -2,9 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AggroRange : MonoBehaviour {
+public class AggroRange : MonoBehaviour 
+{
+    // The Enemy that possesses this aggrorange
+    Enemy parent;
 
-    Enemy parent; 
+    // Whether this is a Far target or close targetter
+    [SerializeField]
+    bool FarTarget;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +19,11 @@ public class AggroRange : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player")) {
-            parent.Target = collision.transform;
+            if (FarTarget) {
+                parent.FarTarget = collision.transform;
+            } else {
+                parent.Target = collision.transform;
+            }
         }
     }
 
@@ -22,7 +31,11 @@ public class AggroRange : MonoBehaviour {
     {
         if (collision.CompareTag("Player"))
         {
-            parent.Target = null;
+            if (FarTarget) {
+                parent.FarTarget = null;
+            } else {
+                parent.Target = null;
+            }
         }
     }
 }
