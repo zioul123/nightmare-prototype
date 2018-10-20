@@ -33,9 +33,11 @@ public class AggroRange : MonoBehaviour
         {
             if (FarTarget) {
                 parent.FarTarget = null;
-            } else {
-                parent.Target = null;
-            }
+
+            } 
+            // If it's a far target and range is exited, stop following. If it's short target, also stop following.
+            parent.Target = null;
+
         }
     }
 }

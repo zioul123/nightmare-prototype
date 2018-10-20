@@ -17,6 +17,15 @@ public class Enemy : Npc
     // The possible target of this enemy that is outside of aggro range
     private Transform farTarget;
 
+    // Current state of the enemy
+    private IState currentState;
+
+    // Initialization
+    protected void Awake()
+    {
+        ChangeState(new IdleState());
+    }
+
     // When selected, show the healthGroup
     public override Transform Select()
     {
@@ -50,18 +59,7 @@ public class Enemy : Npc
     protected override void Update()
     {
         base.Update();
-        FollowTarget();
-    }
-
-    // Follow the target
-    private void FollowTarget()
-    {
-        if (!IsDead && target != null) {
-            direction = (target.transform.position - transform.position).normalized;
-            // transform.position = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
-        } else {
-            direction = Vector2.zero;
-        }
+        currentState.Update();
     }
 
     // Hide the healthgroup after a few seconds delay
@@ -131,6 +129,15 @@ public class Enemy : Npc
     private void HideSelectionCircle()
     {
         selectionCircle.gameObject.SetActive(false);
+    }
+
+    public void ChangeState(IState newState)
+    {
+        if (currentState != null) {
+            currentState.Exit();
+        }
+        currentState = newState;
+        currentState.Enter(this);
     }
 
     // Getter/setters

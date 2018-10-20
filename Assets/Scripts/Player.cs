@@ -98,7 +98,7 @@ public class Player : Character
     private void GetInput () 
     {
         // Reset direction first
-        direction = Vector2.zero;
+        Direction = Vector2.zero;
 
         // FOR DEBUG
         if (Input.GetKeyDown(KeyCode.P)) {
@@ -122,24 +122,24 @@ public class Player : Character
 
         // Handle Movement and Exit Points
         if (Input.GetKey(KeyCode.A)) {
-            direction += Vector2.left;
+            Direction += Vector2.left;
             exitIndex = 3;
         }
         if (Input.GetKey(KeyCode.R)) {
-            direction += Vector2.down;
+            Direction += Vector2.down;
             exitIndex = 0;
         }
         if (Input.GetKey(KeyCode.W))
         {
-            direction += Vector2.up;
+            Direction += Vector2.up;
             exitIndex = 1;
         }
         if (Input.GetKey(KeyCode.S)) {
-            direction += Vector2.right;
+            Direction += Vector2.right;
             exitIndex = 2;
         }
 
-        direction = direction.normalized;
+        Direction = Direction.normalized;
 
         // Handle Skills
         // Toggle Attack mode

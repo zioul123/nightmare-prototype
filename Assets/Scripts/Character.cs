@@ -12,7 +12,7 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     protected float speed = 1f;
     // The Character's direction
-    protected Vector2 direction;
+    private Vector2 direction;
     // The Character's animator
     protected Animator animator;
     // The Character's rigidbody
@@ -68,7 +68,7 @@ public abstract class Character : MonoBehaviour
     // Move the Character
     public void MoveCharacter ()
     {
-        rigidBody.velocity = direction * speed;
+        rigidBody.velocity = Direction * speed;
     }
 
     // Stop attacking
@@ -103,7 +103,7 @@ public abstract class Character : MonoBehaviour
     private void AnimateCharacter ()
     {
         if (IsMoving) {
-            SetWalkAnimation(direction);
+            SetWalkAnimation(Direction);
             if (!isMeleeing) {
                 StopAttacking();
             }
@@ -158,7 +158,7 @@ public abstract class Character : MonoBehaviour
     {
         get
         {
-            return direction != Vector2.zero;
+            return Direction != Vector2.zero;
         }
     }
 
@@ -174,6 +174,8 @@ public abstract class Character : MonoBehaviour
             health = value;
         }
     }
+
+    public Vector2 Direction { get { return direction; } set { this.direction = value; }}
 
     // Set the attackLayer string based on the AttackLayer enum
     public void SetAttackLayer(AttackLayer al)
