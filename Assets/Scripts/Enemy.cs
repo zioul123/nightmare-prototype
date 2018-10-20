@@ -57,7 +57,10 @@ public class Enemy : Npc
     private void FollowTarget()
     {
         if (!IsDead && target != null) {
-            transform.position = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+            direction = (target.transform.position - transform.position).normalized;
+            // transform.position = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+        } else {
+            direction = Vector2.zero;
         }
     }
 

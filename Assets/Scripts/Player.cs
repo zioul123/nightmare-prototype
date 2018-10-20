@@ -139,6 +139,8 @@ public class Player : Character
             exitIndex = 2;
         }
 
+        direction = direction.normalized;
+
         // Handle Skills
         // Toggle Attack mode
         if (Input.GetKeyDown(KeyCode.Tab) || Input.GetKeyDown(KeyCode.LeftShift)) {

@@ -317,7 +317,7 @@ Animator:
   m_GameObject: {fileID: 1607618713165516}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 5e04a60e35dbd4ac58ee9947ac162a2c, type: 2}
+  m_Controller: {fileID: 9100000, guid: 53fe0058161684473ab715829dba5633, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -395,8 +395,6 @@ MonoBehaviour:
   portrait: {fileID: 21300000, guid: a3d429f6cde14455798874898121fa4f, type: 3}
   healthGroup: {fileID: 225220183481357014}
   selectionCircle: {fileID: 212625916897672556}
-  target: {fileID: 0}
-  farTarget: {fileID: 0}
 --- !u!114 &114417913751677670
 MonoBehaviour:
   m_ObjectHideFlags: 1
