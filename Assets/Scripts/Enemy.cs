@@ -16,6 +16,9 @@ public class Enemy : Npc
     private Transform target;
     // The possible target of this enemy that is outside of aggro range
     private Transform farTarget;
+    // The attack range of this enemy
+    [SerializeField]
+    private float attackRange;
 
     // Current state of the enemy
     private IState currentState;
@@ -146,4 +149,16 @@ public class Enemy : Npc
     public bool IsDamaged { get { return Health.CurrentValue != Health.MaxValue; } }
     public bool IsDead { get { return Health.CurrentValue == 0; } }
 
+    public float AttackRange
+    {
+        get
+        {
+            return attackRange;
+        }
+
+        set
+        {
+            attackRange = value;
+        }
+    }
 }

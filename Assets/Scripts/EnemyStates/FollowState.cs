@@ -17,9 +17,15 @@ public class FollowState : IState
 
     public void Update()
     {
+        // Following
         if (!parent.IsDead && parent.Target != null) {
             parent.Direction = (parent.Target.transform.position - parent.transform.position).normalized;
             // transform.position = Vector2.MoveTowards(transform.position, target.position, Time.deltaTime * speed);
+
+            float distance = Vector2.Distance(parent.Target.transform.position, parent.transform.position);
+            if (distance <= parent.AttackRange) {
+                parent.ChangeState(new AttackState());
+            }
         // Unfollow
         } else {
             parent.ChangeState(new IdleState());

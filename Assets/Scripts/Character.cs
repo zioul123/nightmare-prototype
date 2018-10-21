@@ -71,20 +71,6 @@ public abstract class Character : MonoBehaviour
         rigidBody.velocity = Direction * speed;
     }
 
-    // Stop attacking
-    public virtual void StopAttacking()
-    {
-        isAttacking = false; // Stop attacking in script
-        animator.SetBool("attack", isAttacking); // Stop attacking in animation controller
-
-        if (attackRoutine != null)
-        {
-            StopCoroutine(attackRoutine);
-            attackRoutine = null;
-            Debug.Log("Stopped attacking coroutine.");
-        }
-    }
-
     // Inflict damage on this character
     public virtual void TakeDamage(float damage) 
     {
@@ -102,11 +88,8 @@ public abstract class Character : MonoBehaviour
     // Animate the Character
     private void AnimateCharacter ()
     {
-        if (IsMoving) {
+        if (IsMoving && !isMeleeing) {
             SetWalkAnimation(Direction);
-            if (!isMeleeing) {
-                StopAttacking();
-            }
         } else if (isAttacking) {
             SetAttackAnimation();
         } else {

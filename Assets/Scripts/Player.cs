@@ -85,6 +85,11 @@ public class Player : Character
         if (isMeleeing) {
             ActivateMeleeAoe(exitIndex);
         }
+
+        if (IsMoving && !isMeleeing)
+        {
+            StopAttacking();
+        }
 	}
 
     // Set the movement limits of the player so she cannot leave the map
@@ -331,14 +336,23 @@ public class Player : Character
     }
 
     // Stop attacking
-    public override void StopAttacking()
+    public void StopAttacking()
     {
         spellBook.StopCasting(); // If doing melee, this doesn't do anything
         if (meleeAoe != null)
         {
             meleeAoe.SetActive(false); // If spell casting, this doesn't do anything
         }
-        base.StopAttacking();
+
+        isAttacking = false; // Stop attacking in script
+        animator.SetBool("attack", isAttacking); // Stop attacking in animation controller
+
+        if (attackRoutine != null)
+        {
+            StopCoroutine(attackRoutine);
+            attackRoutine = null;
+            Debug.Log("Stopped attacking coroutine.");
+        }
     }
 
     // Check if enemy is in range of current spell

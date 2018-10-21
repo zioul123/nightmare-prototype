@@ -395,6 +395,7 @@ MonoBehaviour:
   portrait: {fileID: 21300000, guid: a3d429f6cde14455798874898121fa4f, type: 3}
   healthGroup: {fileID: 225220183481357014}
   selectionCircle: {fileID: 212625916897672556}
+  attackRange: 1
 --- !u!114 &114417913751677670
 MonoBehaviour:
   m_ObjectHideFlags: 1
