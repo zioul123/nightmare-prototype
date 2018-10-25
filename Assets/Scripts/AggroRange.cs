@@ -7,10 +7,6 @@ public class AggroRange : MonoBehaviour
     // The Enemy that possesses this aggrorange
     Enemy parent;
 
-    // Whether this is a Far target or close targetter
-    [SerializeField]
-    bool FarTarget;
-
 	// Use this for initialization
 	void Start () {
         parent = GetComponentInParent<Enemy>();
@@ -18,26 +14,10 @@ public class AggroRange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Debug.Log("Distance: " + Vector2.Distance(parent.transform.position, collision.transform.position));
+        Debug.Log("Aggro range entered");
         if (collision.CompareTag("Player")) {
-            if (FarTarget) {
-                parent.FarTarget = collision.transform;
-            } else {
-                parent.Target = collision.transform;
-            }
-        }
-    }
-
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            if (FarTarget) {
-                parent.FarTarget = null;
-
-            } 
-            // If it's a far target and range is exited, stop following. If it's short target, also stop following.
-            parent.Target = null;
-
+            parent.SetTarget(collision.transform);
         }
     }
 }

@@ -9,6 +9,7 @@ public class IdleState : IState
     public void Enter(Enemy parent)
     {
         this.parent = parent;
+        parent.Reset();
     }
 
     public void Exit()

@@ -26,8 +26,9 @@ public class FollowState : IState
             if (distance <= parent.AttackRange) {
                 parent.ChangeState(new AttackState());
             }
+        }
         // Unfollow
-        } else {
+        if (!parent.InRange){
             parent.ChangeState(new IdleState());
         }
     }

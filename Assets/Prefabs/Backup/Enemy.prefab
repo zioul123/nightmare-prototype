@@ -115,23 +115,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!1 &1870956070603908
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4646195586053978}
-  - component: {fileID: 58263679432761682}
-  - component: {fileID: 114340964471565700}
-  m_Layer: 0
-  m_Name: FarAggroRange
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
 --- !u!1 &1970108712048206
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,7 +148,6 @@ Transform:
   - {fileID: 224741392322556644}
   - {fileID: 224593302516937598}
   - {fileID: 4457665952634918}
-  - {fileID: 4646195586053978}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -195,19 +177,6 @@ Transform:
   m_Father: {fileID: 4106888596536962}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4646195586053978
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1870956070603908}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4106888596536962}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &50451935322932534
 Rigidbody2D:
   serializedVersion: 4
@@ -228,21 +197,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!58 &58263679432761682
-CircleCollider2D:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1870956070603908}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 10
 --- !u!58 &58852219088121880
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -364,19 +318,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64feb538b456c44e0a11f261d13ad855, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  FarTarget: 0
---- !u!114 &114340964471565700
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1870956070603908}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 64feb538b456c44e0a11f261d13ad855, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  FarTarget: 1
 --- !u!114 &114348562293918586
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -395,7 +336,9 @@ MonoBehaviour:
   portrait: {fileID: 21300000, guid: a3d429f6cde14455798874898121fa4f, type: 3}
   healthGroup: {fileID: 225220183481357014}
   selectionCircle: {fileID: 212625916897672556}
+  initAggroRange: 1
   attackRange: 1
+  extraRange: 0.1
   attackCooldown: 3
 --- !u!114 &114417913751677670
 MonoBehaviour:

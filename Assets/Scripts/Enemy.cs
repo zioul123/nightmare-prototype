@@ -12,8 +12,10 @@ public class Enemy : Npc
     private SpriteRenderer selectionCircle;
     // To stop the health group from fading
     private Coroutine hideHealthRoutine;
-    // The possible target of this enemy that is outside of aggro range
-    private Transform farTarget;
+    // Aggro range of this enemy
+    [SerializeField]
+    private float initAggroRange = 3;
+    public float AggroRange { get; set; }
     // The attack range of this enemy for initial attack
     [SerializeField]
     private float attackRange;
@@ -34,6 +36,7 @@ public class Enemy : Npc
         ChangeState(new IdleState());
         AttackCooldown = attackCooldown;
         TimeSinceLastAttack = AttackCooldown; // Start with ability to attack already
+        AggroRange = initAggroRange;
     }
 
     // When selected, show the healthGroup
@@ -89,18 +92,8 @@ public class Enemy : Npc
     public override void TakeDamage(float damage, Transform source)
     {
         base.TakeDamage(damage, source);
+        SetTarget(source);
         OnHealthChange(Health.CurrentValue);
-
-        // Target the person who attacked it if possible
-        if (Target == null) {
-            Target = source;
-            if (source.CompareTag("Enemy")) {
-                source.GetComponent<Enemy>().Select();
-            }
-            //if (farTarget != null) {
-            //    Target = farTarget;
-            //}
-        }
 
         // Health is not currently shown - not selected nor attacked within 5 seconds ago
         if (healthGroup.alpha <= 0) {
@@ -160,8 +153,26 @@ public class Enemy : Npc
         currentState.Enter(this);
     }
 
+    public void SetTarget(Transform target) 
+    {
+        if (Target == null) {
+            float distance = Vector2.Distance(target.position, transform.position);
+            AggroRange = initAggroRange + distance;
+            Target = target;
+        }
+    }
+
+    public void Reset()
+    {
+        Target = null;
+        AggroRange = initAggroRange;
+        // Health.CurrentValue = Health.MaxValue;
+        OnHealthChange(Health.CurrentValue);
+    }
+
+    public bool InRange { get { return Vector2.Distance(transform.position, Target.position) < AggroRange; } }
+
     // Getter/setters
-    public Transform FarTarget { get { return farTarget; } set { farTarget = value; } }
     public bool IsDamaged { get { return Health.CurrentValue < Health.MaxValue; } }
     public float AttackRange { get { return attackRange; } set { attackRange = value; } }
     public float ExtraRange { get { return extraRange; } set { extraRange = value; } }
