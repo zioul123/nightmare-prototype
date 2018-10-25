@@ -77,6 +77,11 @@ public abstract class Character : MonoBehaviour
         Health.CurrentValue -= damage;
         Debug.Log("Current health: " + Health.CurrentValue);
 
+        if (IsDead) {
+            direction = Vector2.zero;
+            rigidBody.velocity = direction;
+        }
+
         if (Health.CurrentValue <= 0) {
             Animator.SetTrigger("die");
         }
@@ -88,12 +93,16 @@ public abstract class Character : MonoBehaviour
     // Animate the Character
     private void AnimateCharacter ()
     {
-        if (IsMoving && !IsMeleeing) {
-            SetWalkAnimation(Direction);
-        } else if (IsAttacking) {
-            SetAttackAnimation();
+        if (!IsDead) {
+            if (IsMoving && !IsMeleeing) {
+                SetWalkAnimation(Direction);
+            } else if (IsAttacking) {
+                SetAttackAnimation();
+            } else {
+                SetIdleAnimation();
+            }
         } else {
-            SetIdleAnimation();
+            SetDeathAnimation();
         }
     }
 
@@ -106,6 +115,13 @@ public abstract class Character : MonoBehaviour
         } else {
             Debug.Log("Set attackLayer before setting attack animation.");
         }
+    }
+
+    // Animate for death
+    private void SetDeathAnimation()
+    {
+        Debug.Log("Died");
+        ActivateLayer("DeathLayer");
     }
 
     // Animate for idle state
@@ -145,44 +161,13 @@ public abstract class Character : MonoBehaviour
 
     public bool IsAttacking { get { return isAttacking; } set { isAttacking = value; } }
 
-    public bool IsMeleeing
-    {
-        get
-        {
-            return isMeleeing;
-        }
+    public bool IsMeleeing { get { return isMeleeing; } set { isMeleeing = value; } }
 
-        set
-        {
-            isMeleeing = value;
-        }
-    }
+    public Animator Animator { get { return animator; } set { animator = value; } }
 
-    public Animator Animator
-    {
-        get
-        {
-            return animator;
-        }
+    public Coroutine AttackRoutine { get { return attackRoutine; }  set { attackRoutine = value; } }
 
-        set
-        {
-            animator = value;
-        }
-    }
-
-    public Coroutine AttackRoutine
-    {
-        get
-        {
-            return attackRoutine;
-        }
-
-        set
-        {
-            attackRoutine = value;
-        }
-    }
+    public bool IsDead { get { return Health.CurrentValue <= 0; } }
 
     // Set the attackLayer string based on the AttackLayer enum
     public void SetAttackLayer(AttackLayer al)

@@ -70,12 +70,14 @@ public class Enemy : Npc
 
     protected override void Update()
     {
-        if (!IsAttacking) {
-            TimeSinceLastAttack += Time.deltaTime;
+        if (!IsDead) {
+            if (!IsAttacking) {
+                TimeSinceLastAttack += Time.deltaTime;
+            }
+            currentState.Update();
         }
-
         base.Update();
-        currentState.Update();
+
     }
 
     // Hide the healthgroup after a few seconds delay
@@ -99,7 +101,7 @@ public class Enemy : Npc
         }
 
         // Health is not currently shown - not selected nor attacked within 5 seconds ago
-        if (healthGroup.alpha == 0) {
+        if (healthGroup.alpha <= 0) {
             ShowHealthGroup();
             // Restart the hide health timer if necessary
             if (hideHealthRoutine != null)
@@ -159,10 +161,7 @@ public class Enemy : Npc
     // Getter/setters
     public Transform Target { get { return target; } set { target = value; }}
     public Transform FarTarget { get { return farTarget; } set { farTarget = value; } }
-    public bool IsDamaged { get { return Health.CurrentValue != Health.MaxValue; } }
-    public bool IsDead { get { return Health.CurrentValue == 0; } }
-
+    public bool IsDamaged { get { return Health.CurrentValue < Health.MaxValue; } }
     public float AttackRange { get { return attackRange; } set { attackRange = value; } }
-
     public float ExtraRange { get { return extraRange; } set { extraRange = value; } }
 }

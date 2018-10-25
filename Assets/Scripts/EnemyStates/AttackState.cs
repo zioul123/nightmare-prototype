@@ -29,7 +29,7 @@ public class AttackState : IState
         if (parent.Target != null) {
             // Check if it needs to start moving or it can just stay in attack state
             float distance = Vector2.Distance(parent.Target.transform.position, parent.transform.position);
-            Debug.Log(distance);
+            //Debug.Log(distance);
             if (distance >= parent.AttackRange + parent.ExtraRange && !parent.IsAttacking) { // Only change if it's not currently attacking
                 parent.ChangeState(new FollowState());
             }

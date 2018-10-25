@@ -51,11 +51,5 @@ public class Npc : Character
         Destroy(gameObject);
     }
 
-    public Sprite Portrait
-    {
-        get
-        {
-            return portrait;
-        }
-    }
+    public Sprite Portrait { get { return portrait; } }
 }
