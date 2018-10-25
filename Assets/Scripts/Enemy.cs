@@ -16,9 +16,16 @@ public class Enemy : Npc
     private Transform target;
     // The possible target of this enemy that is outside of aggro range
     private Transform farTarget;
-    // The attack range of this enemy
+    // The attack range of this enemy for initial attack
     [SerializeField]
     private float attackRange;
+    // Runaway range of this enemy
+    [SerializeField]
+    private float extraRange = 0.1f;
+    [SerializeField]
+    private float attackCooldown;
+    public float AttackCooldown { get; set; }
+    public float TimeSinceLastAttack { get; set; }
 
     // Current state of the enemy
     private IState currentState;
@@ -27,6 +34,8 @@ public class Enemy : Npc
     protected void Awake()
     {
         ChangeState(new IdleState());
+        AttackCooldown = attackCooldown;
+        TimeSinceLastAttack = AttackCooldown; // Start with ability to attack already
     }
 
     // When selected, show the healthGroup
@@ -61,6 +70,10 @@ public class Enemy : Npc
 
     protected override void Update()
     {
+        if (!IsAttacking) {
+            TimeSinceLastAttack += Time.deltaTime;
+        }
+
         base.Update();
         currentState.Update();
     }
@@ -149,16 +162,7 @@ public class Enemy : Npc
     public bool IsDamaged { get { return Health.CurrentValue != Health.MaxValue; } }
     public bool IsDead { get { return Health.CurrentValue == 0; } }
 
-    public float AttackRange
-    {
-        get
-        {
-            return attackRange;
-        }
+    public float AttackRange { get { return attackRange; } set { attackRange = value; } }
 
-        set
-        {
-            attackRange = value;
-        }
-    }
+    public float ExtraRange { get { return extraRange; } set { extraRange = value; } }
 }

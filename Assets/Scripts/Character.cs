@@ -14,7 +14,7 @@ public abstract class Character : MonoBehaviour
     // The Character's direction
     private Vector2 direction;
     // The Character's animator
-    protected Animator animator;
+    private Animator animator;
     // The Character's rigidbody
     private Rigidbody2D rigidBody;
     // The Character's hitbox
@@ -29,11 +29,11 @@ public abstract class Character : MonoBehaviour
     // The Attack layer to use
     private string attackLayer;
     // Whether the Character is attacking
-    protected bool isAttacking = false;
+    private bool isAttacking = false;
     // Whether using melee or another kind of attack; melee can occur while moving
-    protected bool isMeleeing = false;
+    private bool isMeleeing = false;
     // Attack Coroutine
-    protected Coroutine attackRoutine;
+    private Coroutine attackRoutine;
 
     /*
      * Methods
@@ -42,7 +42,7 @@ public abstract class Character : MonoBehaviour
     protected virtual void Start () 
     {
         // Get components
-        animator = GetComponent<Animator>();
+        Animator = GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody2D>();
 
         // Initialize stats
@@ -78,7 +78,7 @@ public abstract class Character : MonoBehaviour
         Debug.Log("Current health: " + Health.CurrentValue);
 
         if (Health.CurrentValue <= 0) {
-            animator.SetTrigger("die");
+            Animator.SetTrigger("die");
         }
     }
 
@@ -88,9 +88,9 @@ public abstract class Character : MonoBehaviour
     // Animate the Character
     private void AnimateCharacter ()
     {
-        if (IsMoving && !isMeleeing) {
+        if (IsMoving && !IsMeleeing) {
             SetWalkAnimation(Direction);
-        } else if (isAttacking) {
+        } else if (IsAttacking) {
             SetAttackAnimation();
         } else {
             SetIdleAnimation();
@@ -120,8 +120,8 @@ public abstract class Character : MonoBehaviour
         ActivateLayer("WalkLayer");
 
         // Set animator parameters to trigger direction
-        animator.SetFloat("x", direction.x);
-        animator.SetFloat("y", direction.y);
+        Animator.SetFloat("x", direction.x);
+        Animator.SetFloat("y", direction.y);
     }
 
     /*
@@ -130,35 +130,59 @@ public abstract class Character : MonoBehaviour
     // Set the animation layer to be active
     public void ActivateLayer (string layerName)
     {
-        for (int i = 0; i < animator.layerCount; i++) {
-                animator.SetLayerWeight(i, 0);
+        for (int i = 0; i < Animator.layerCount; i++) {
+                Animator.SetLayerWeight(i, 0);
         }
-        animator.SetLayerWeight(animator.GetLayerIndex(layerName), 1);
+        Animator.SetLayerWeight(Animator.GetLayerIndex(layerName), 1);
     }
 
     // Whether the Character is moving
-    public bool IsMoving
-    {
-        get
-        {
-            return Direction != Vector2.zero;
-        }
-    }
+    public bool IsMoving { get { return Direction != Vector2.zero; } }
 
-    public Stat Health
+    public Stat Health { get { return health; } set { health = value; } }
+
+    public Vector2 Direction { get { return direction; } set { this.direction = value; } }
+
+    public bool IsAttacking { get { return isAttacking; } set { isAttacking = value; } }
+
+    public bool IsMeleeing
     {
         get
         {
-            return health;
+            return isMeleeing;
         }
 
         set
         {
-            health = value;
+            isMeleeing = value;
         }
     }
 
-    public Vector2 Direction { get { return direction; } set { this.direction = value; }}
+    public Animator Animator
+    {
+        get
+        {
+            return animator;
+        }
+
+        set
+        {
+            animator = value;
+        }
+    }
+
+    public Coroutine AttackRoutine
+    {
+        get
+        {
+            return attackRoutine;
+        }
+
+        set
+        {
+            attackRoutine = value;
+        }
+    }
 
     // Set the attackLayer string based on the AttackLayer enum
     public void SetAttackLayer(AttackLayer al)

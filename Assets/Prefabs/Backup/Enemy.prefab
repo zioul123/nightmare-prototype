@@ -396,6 +396,7 @@ MonoBehaviour:
   healthGroup: {fileID: 225220183481357014}
   selectionCircle: {fileID: 212625916897672556}
   attackRange: 1
+  attackCooldown: 3
 --- !u!114 &114417913751677670
 MonoBehaviour:
   m_ObjectHideFlags: 1

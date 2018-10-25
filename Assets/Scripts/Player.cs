@@ -42,6 +42,10 @@ public class Player : Character
     private GameObject[] meleeAoes;
     // Active Melee AOE
     GameObject meleeAoe;
+    // Melee "cast time"
+    private const float meleeDuration = 0.3333f;
+    // Melee trailing animation time
+    private const float meleeTrailingTime = 0.1667f;
 
     // Layer mask of clickables
     int clickableLayerMask;
@@ -82,11 +86,11 @@ public class Player : Character
                                          transform.position.z);
 
         // Change the melee input box if necessary
-        if (isMeleeing) {
+        if (IsMeleeing) {
             ActivateMeleeAoe(exitIndex);
         }
 
-        if (IsMoving && !isMeleeing)
+        if (IsMoving && !IsMeleeing)
         {
             StopAttacking();
         }
@@ -196,23 +200,23 @@ public class Player : Character
 
         // Right
         if (-45 < angle && angle <= 45) {
-            animator.SetFloat("x", 1);
-            animator.SetFloat("y", 0);
+            Animator.SetFloat("x", 1);
+            Animator.SetFloat("y", 0);
             exitIndex = 2;
         // Down
         } else if (-135 < angle && angle <= -45) {
-            animator.SetFloat("x", 0);
-            animator.SetFloat("y", -1);
+            Animator.SetFloat("x", 0);
+            Animator.SetFloat("y", -1);
             exitIndex = 0;
         // Left
         } else if (angle <= -135 || 135 < angle) {
-            animator.SetFloat("x", -1);
-            animator.SetFloat("y", 0);
+            Animator.SetFloat("x", -1);
+            Animator.SetFloat("y", 0);
             exitIndex = 3;
         // Up
         } else if (45 < angle && angle <= 135) {
-            animator.SetFloat("x", 0);
-            animator.SetFloat("y", 1);
+            Animator.SetFloat("x", 0);
+            Animator.SetFloat("y", 1);
             exitIndex = 1;
         }
     }
@@ -220,9 +224,9 @@ public class Player : Character
     // Check conditions whether melee is possible and attack
     public void AttemptMelee() 
     {
-        if (!isAttacking)
+        if (!IsAttacking)
         {
-            attackRoutine = StartCoroutine(MeleeAttack());
+            AttackRoutine = StartCoroutine(MeleeAttack());
         }
     }
 
@@ -233,22 +237,22 @@ public class Player : Character
 
         // Trigger attacking
         SetAttackLayer(AttackLayer.MeleeLayer);
-        isAttacking = true;
-        animator.SetBool("attack", isAttacking);
-        isMeleeing = true;
+        IsAttacking = true;
+        Animator.SetBool("attack", IsAttacking);
+        IsMeleeing = true;
 
         // Show the AOE box
         meleeAoe = meleeAoes[exitIndex];
         meleeAoe.SetActive(true);
 
         // Animation attack time
-        yield return new WaitForSeconds(0.3333f);
+        yield return new WaitForSeconds(meleeDuration);
         EffectMelee();
         Debug.Log("Melee executed");
-        isMeleeing = false; // Moving will now cancel attack
+        IsMeleeing = false; // Moving will now cancel attack
 
         // Trailing animation time
-        yield return new WaitForSeconds(0.1667f);
+        yield return new WaitForSeconds(meleeTrailingTime);
         StopAttacking();
     }
 
@@ -284,10 +288,10 @@ public class Player : Character
         if (isDirectional) {
             ActivateBlocks();
         }
-        if (Target != null && !isAttacking && !IsMoving && (!RequiresLineOfSight() || InLineOfSight()) && InRange())
+        if (Target != null && !IsAttacking && !IsMoving && (!RequiresLineOfSight() || InLineOfSight()) && InRange())
         {
             RotatePlayerTowardTarget();
-            attackRoutine = StartCoroutine(SpellCast());
+            AttackRoutine = StartCoroutine(SpellCast());
         }
     }
 
@@ -299,8 +303,8 @@ public class Player : Character
         // Trigger attacking
         spellBook.StartCastBar(attackMode.selectedAttackMode);
         SetAttackLayer(currentSpell.AttackLayer);
-        isAttacking = true;  // Trigger attacking in script
-        animator.SetBool("attack", isAttacking); // Trigger attacking animation in animation controller
+        IsAttacking = true;  // Trigger attacking in script
+        Animator.SetBool("attack", IsAttacking); // Trigger attacking animation in animation controller
 
         // Animation cast time
         yield return new WaitForSeconds(currentSpell.CastTime);
@@ -344,13 +348,13 @@ public class Player : Character
             meleeAoe.SetActive(false); // If spell casting, this doesn't do anything
         }
 
-        isAttacking = false; // Stop attacking in script
-        animator.SetBool("attack", isAttacking); // Stop attacking in animation controller
+        IsAttacking = false; // Stop attacking in script
+        Animator.SetBool("attack", IsAttacking); // Stop attacking in animation controller
 
-        if (attackRoutine != null)
+        if (AttackRoutine != null)
         {
-            StopCoroutine(attackRoutine);
-            attackRoutine = null;
+            StopCoroutine(AttackRoutine);
+            AttackRoutine = null;
             Debug.Log("Stopped attacking coroutine.");
         }
     }
