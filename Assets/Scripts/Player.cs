@@ -20,8 +20,6 @@ public class Player : Character
     [SerializeField]
     private GameObject[] exitPoints;
     private int exitIndex = 0; // Down by default
-    // Target of the spell
-    public Transform Target { get; set; }
     // Current selected spell
     Spell currentSpell;
 
@@ -111,7 +109,7 @@ public class Player : Character
 
         // FOR DEBUG
         if (Input.GetKeyDown(KeyCode.P)) {
-            TakeDamage(10);
+            TakeDamage(10, transform);
         }
         if (Input.GetKeyDown(KeyCode.F)) {
             Health.CurrentValue += 10;
@@ -262,7 +260,7 @@ public class Player : Character
         Collider2D[] colliders = Physics2D.OverlapBoxAll(meleeAoe.transform.position, meleeAoe.transform.lossyScale, 0, clickableLayerMask);
         foreach (Collider2D collider in colliders) {
             if (collider.gameObject.tag == "Enemy" && collider.GetComponent<Character>().Health.CurrentValue != 0) {
-                collider.GetComponent<Enemy>().TakeDamage(meleeDamage);
+                collider.GetComponent<Character>().TakeDamage(meleeDamage, transform);
             }
         }
 
@@ -288,7 +286,8 @@ public class Player : Character
         if (isDirectional) {
             ActivateBlocks();
         }
-        if (Target != null && !IsAttacking && !IsMoving && (!RequiresLineOfSight() || InLineOfSight()) && InRange())
+        if (Target != null && !Target.GetComponentInParent<Enemy>().IsDead &&
+            !IsAttacking && !IsMoving && (!RequiresLineOfSight() || InLineOfSight()) && InRange())
         {
             RotatePlayerTowardTarget();
             AttackRoutine = StartCoroutine(SpellCast());
@@ -327,7 +326,7 @@ public class Player : Character
     public void InstantiateSpell () 
     {
         SpellScript spellScript = Instantiate(currentSpell.SpellPrefab, exitPoints[exitIndex].transform.position, Quaternion.identity).GetComponent<SpellScript>();
-        spellScript.Initialize(currentSpell.Speed, currentSpell.Damage, currentSpell.Aoe);
+        spellScript.Initialize(currentSpell.Speed, currentSpell.Damage, currentSpell.Aoe, transform);
 
         // Add fields to the spell as necessary
         if (currentSpell.MySpellType == Spell.SpellType.Projectile) {

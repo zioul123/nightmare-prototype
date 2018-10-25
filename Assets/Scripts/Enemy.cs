@@ -12,8 +12,6 @@ public class Enemy : Npc
     private SpriteRenderer selectionCircle;
     // To stop the health group from fading
     private Coroutine hideHealthRoutine;
-    // The target of this enemy
-    private Transform target;
     // The possible target of this enemy that is outside of aggro range
     private Transform farTarget;
     // The attack range of this enemy for initial attack
@@ -88,16 +86,20 @@ public class Enemy : Npc
     }
 
     // Perform character functions and call NPC's function that activates listeners. Also show health group for a short while.
-    public override void TakeDamage(float damage)
+    public override void TakeDamage(float damage, Transform source)
     {
-        base.TakeDamage(damage);
+        base.TakeDamage(damage, source);
         OnHealthChange(Health.CurrentValue);
 
         // Target the person who attacked it if possible
-        if (target == null) {
-            if (farTarget != null) {
-                target = farTarget;
+        if (Target == null) {
+            Target = source;
+            if (source.CompareTag("Enemy")) {
+                source.GetComponent<Enemy>().Select();
             }
+            //if (farTarget != null) {
+            //    Target = farTarget;
+            //}
         }
 
         // Health is not currently shown - not selected nor attacked within 5 seconds ago
@@ -159,7 +161,6 @@ public class Enemy : Npc
     }
 
     // Getter/setters
-    public Transform Target { get { return target; } set { target = value; }}
     public Transform FarTarget { get { return farTarget; } set { farTarget = value; } }
     public bool IsDamaged { get { return Health.CurrentValue < Health.MaxValue; } }
     public float AttackRange { get { return attackRange; } set { attackRange = value; } }

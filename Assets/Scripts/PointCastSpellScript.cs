@@ -41,6 +41,6 @@ public class PointCastSpellScript : SpellScript
     {
         yield return new WaitForSeconds(0.5f);
         GetComponent<Animator>().SetTrigger("impact");
-        Target.GetComponentInParent<Enemy>().TakeDamage(damage);
+        Target.GetComponentInParent<Enemy>().TakeDamage(damage, source);
     }
 }

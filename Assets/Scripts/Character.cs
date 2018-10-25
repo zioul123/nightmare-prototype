@@ -35,6 +35,9 @@ public abstract class Character : MonoBehaviour
     // Attack Coroutine
     private Coroutine attackRoutine;
 
+    // Target of the character
+    public Transform Target { get; set; }
+
     /*
      * Methods
      */
@@ -72,7 +75,7 @@ public abstract class Character : MonoBehaviour
     }
 
     // Inflict damage on this character
-    public virtual void TakeDamage(float damage) 
+    public virtual void TakeDamage(float damage, Transform source) 
     {
         Health.CurrentValue -= damage;
         Debug.Log("Current health: " + Health.CurrentValue);

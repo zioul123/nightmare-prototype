@@ -7,6 +7,8 @@ public abstract class SpellScript : MonoBehaviour {
     protected Rigidbody2D rigidBody;
     // Target of the spell
     public Transform Target { get; set; }
+    // Source of the spell
+    protected Transform source;
 
     // The speed this spell moves
     [SerializeField]
@@ -25,7 +27,7 @@ public abstract class SpellScript : MonoBehaviour {
         // TODO: Possibly delete the second condition for piercing spells
         if (collision.tag == "HitBox" && collision.transform == Target) {
             // Inflict damage
-            collision.GetComponentInParent<Enemy>().TakeDamage(damage);
+            collision.GetComponentInParent<Character>().TakeDamage(damage, source);
             // Animate effect
             GetComponent<Animator>().SetTrigger("impact");
             // Stop moving the spell
@@ -52,17 +54,18 @@ public abstract class SpellScript : MonoBehaviour {
         foreach (Collider2D collider in colliders) {
             if (collider.gameObject.tag == "Enemy" && (Target.parent.gameObject != collider.gameObject)) {
                 // Inflict damage
-                collider.GetComponentInParent<Enemy>().TakeDamage(damage);
+                collider.GetComponentInParent<Character>().TakeDamage(damage, source);
             }
         }
     }
 
     // Set the speed and damage of the spell
-    public void Initialize(float speed, int damage, float aoe) 
+    public void Initialize(float speed, int damage, float aoe, Transform source) 
     {
         Speed = speed;
         this.damage = damage;
         this.aoe = aoe;
+        this.source = source;
     }
 
     public float Speed
