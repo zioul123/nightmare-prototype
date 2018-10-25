@@ -29,7 +29,7 @@ public class FollowState : IState
         }
         // Unfollow
         if (!parent.InRange){
-            parent.ChangeState(new IdleState());
+            parent.ChangeState(new EvadeState());
         }
     }
 }

@@ -123,7 +123,7 @@ public abstract class Character : MonoBehaviour
     // Animate for death
     private void SetDeathAnimation()
     {
-        Debug.Log("Died");
+        //Debug.Log("Died");
         ActivateLayer("DeathLayer");
     }
 

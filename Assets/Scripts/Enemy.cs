@@ -12,6 +12,8 @@ public class Enemy : Npc
     private SpriteRenderer selectionCircle;
     // To stop the health group from fading
     private Coroutine hideHealthRoutine;
+    // Start position
+    private Vector3 startPosition;
     // Aggro range of this enemy
     [SerializeField]
     private float initAggroRange = 3;
@@ -19,6 +21,9 @@ public class Enemy : Npc
     // The attack range of this enemy for initial attack
     [SerializeField]
     private float attackRange;
+    // The attack damage of this enemy 
+    [SerializeField]
+    private float attackDamage;
     // Runaway range of this enemy
     [SerializeField]
     private float extraRange = 0.1f;
@@ -37,6 +42,7 @@ public class Enemy : Npc
         AttackCooldown = attackCooldown;
         TimeSinceLastAttack = AttackCooldown; // Start with ability to attack already
         AggroRange = initAggroRange;
+        startPosition = transform.position;
     }
 
     // When selected, show the healthGroup
@@ -75,7 +81,7 @@ public class Enemy : Npc
             if (!IsAttacking) {
                 TimeSinceLastAttack += Time.deltaTime;
             }
-            currentState.Update();
+            CurrentState.Update();
         }
         base.Update();
 
@@ -91,9 +97,12 @@ public class Enemy : Npc
     // Perform character functions and call NPC's function that activates listeners. Also show health group for a short while.
     public override void TakeDamage(float damage, Transform source)
     {
-        base.TakeDamage(damage, source);
-        SetTarget(source);
-        OnHealthChange(Health.CurrentValue);
+        if (!(CurrentState is EvadeState)) {
+            base.TakeDamage(damage, source);
+            SetTarget(source);
+            OnHealthChange(Health.CurrentValue);
+        }
+
 
         // Health is not currently shown - not selected nor attacked within 5 seconds ago
         if (healthGroup.alpha <= 0) {
@@ -146,11 +155,11 @@ public class Enemy : Npc
 
     public void ChangeState(IState newState)
     {
-        if (currentState != null) {
-            currentState.Exit();
+        if (CurrentState != null) {
+            CurrentState.Exit();
         }
-        currentState = newState;
-        currentState.Enter(this);
+        CurrentState = newState;
+        CurrentState.Enter(this);
     }
 
     public void SetTarget(Transform target) 
@@ -176,4 +185,21 @@ public class Enemy : Npc
     public bool IsDamaged { get { return Health.CurrentValue < Health.MaxValue; } }
     public float AttackRange { get { return attackRange; } set { attackRange = value; } }
     public float ExtraRange { get { return extraRange; } set { extraRange = value; } }
+
+    public Vector3 StartPosition { get { return startPosition; }  set { startPosition = value; } }
+
+    public IState CurrentState { get { return currentState; }  set { currentState = value; } }
+
+    public float AttackDamage
+    {
+        get
+        {
+            return attackDamage;
+        }
+
+        set
+        {
+            attackDamage = value;
+        }
+    }
 }

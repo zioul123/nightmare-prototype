@@ -14,10 +14,13 @@ public class AggroRange : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Distance: " + Vector2.Distance(parent.transform.position, collision.transform.position));
-        Debug.Log("Aggro range entered");
+        //Debug.Log("Distance: " + Vector2.Distance(parent.transform.position, collision.transform.position));
+        //Debug.Log("Aggro range entered");
         if (collision.CompareTag("Player")) {
             parent.SetTarget(collision.transform);
+            if (parent.CurrentState is EvadeState) {
+                parent.ChangeState(new FollowState());
+            }
         }
     }
 }

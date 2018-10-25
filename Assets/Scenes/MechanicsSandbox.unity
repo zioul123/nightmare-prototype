@@ -440,7 +440,7 @@ Tilemap:
   - first: {x: 14, y: -12, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -530,7 +530,7 @@ Tilemap:
   - first: {x: 14, y: -11, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 9
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -899,7 +899,7 @@ Tilemap:
   - first: {x: -11, y: -7, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 9
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -998,7 +998,7 @@ Tilemap:
   - first: {x: -11, y: -6, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 9
+      m_TileSpriteIndex: 16
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -1007,7 +1007,7 @@ Tilemap:
   - first: {x: -10, y: -6, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -1340,7 +1340,7 @@ Tilemap:
   - first: {x: -20, y: 12, z: 0}
     second:
       m_TileIndex: 0
-      m_TileSpriteIndex: 16
+      m_TileSpriteIndex: 9
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_ObjectToInstantiate: {fileID: 0}
@@ -1678,26 +1678,6 @@ Prefab:
     - target: {fileID: 4106888596536962, guid: 22f6a4c03f1964ef1ae58635750800b0, type: 2}
       propertyPath: m_RootOrder
       value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 114348562293918586, guid: 22f6a4c03f1964ef1ae58635750800b0,
-        type: 2}
-      propertyPath: initAggroRange
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 223319697273198364, guid: 22f6a4c03f1964ef1ae58635750800b0,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -291605147
-      objectReference: {fileID: 0}
-    - target: {fileID: 212894457247062800, guid: 22f6a4c03f1964ef1ae58635750800b0,
-        type: 2}
-      propertyPath: m_SortingLayerID
-      value: -70857423
-      objectReference: {fileID: 0}
-    - target: {fileID: 212894457247062800, guid: 22f6a4c03f1964ef1ae58635750800b0,
-        type: 2}
-      propertyPath: m_SortingLayer
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 22f6a4c03f1964ef1ae58635750800b0, type: 2}
@@ -2447,7 +2427,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ed199dc8c2074029bed790b8eb89d56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   prefab: {fileID: 1607618713165516, guid: 22f6a4c03f1964ef1ae58635750800b0, type: 2}
 --- !u!4 &1618213534
 Transform:

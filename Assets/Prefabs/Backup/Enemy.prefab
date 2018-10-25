@@ -336,8 +336,9 @@ MonoBehaviour:
   portrait: {fileID: 21300000, guid: a3d429f6cde14455798874898121fa4f, type: 3}
   healthGroup: {fileID: 225220183481357014}
   selectionCircle: {fileID: 212625916897672556}
-  initAggroRange: 1
+  initAggroRange: 3
   attackRange: 1
+  attackDamage: 10
   extraRange: 0.1
   attackCooldown: 3
 --- !u!114 &114417913751677670
@@ -495,8 +496,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -70857423
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300028, guid: df891ce8187694b7bba6a2cc776b50d8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -540,7 +541,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -291605147
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &224593302516937598

@@ -46,6 +46,7 @@ public class AttackState : IState
         parent.IsMeleeing = true;
 
         yield return new WaitForSeconds(parent.Animator.GetCurrentAnimatorStateInfo(2).length); // Animation time
+        parent.Target.GetComponent<Character>().TakeDamage(parent.AttackDamage, parent.transform);
 
         parent.IsAttacking = false;
         parent.IsMeleeing = false;
