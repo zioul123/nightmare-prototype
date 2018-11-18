@@ -47,7 +47,7 @@ public class LayerSorter : MonoBehaviour
 
             // Set parent back to the front if no more obstacles colliding
             if (obstacles.Count == 0) {
-                parentRenderer.sortingOrder = 200;
+                parentRenderer.sortingOrder = 0;
             // Otherwise put it behind the backmost obstacle
             } else {
                 obstacles.Sort();
